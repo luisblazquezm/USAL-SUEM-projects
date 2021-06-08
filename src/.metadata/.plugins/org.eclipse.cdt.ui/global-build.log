@@ -1,0 +1,144 @@
+16:17:42 **** Incremental Build of configuration Debug for project laberinto ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+Finished building: ../Sources/main.c
+ 
+Building file: ../Project_Settings/Startup_Code/startup.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Project_Settings/Startup_Code/startup.d" -MT"Project_Settings/Startup_Code/startup.o" -c -o "Project_Settings/Startup_Code/startup.o" "../Project_Settings/Startup_Code/startup.c"
+Finished building: ../Project_Settings/Startup_Code/startup.c
+ 
+Building file: ../Generated_Code/AD1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/AD1.d" -MT"Generated_Code/AD1.o" -c -o "Generated_Code/AD1.o" "../Generated_Code/AD1.c"
+Finished building: ../Generated_Code/AD1.c
+ 
+Building file: ../Generated_Code/ASerialLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/ASerialLdd1.d" -MT"Generated_Code/ASerialLdd1.o" -c -o "Generated_Code/ASerialLdd1.o" "../Generated_Code/ASerialLdd1.c"
+Finished building: ../Generated_Code/ASerialLdd1.c
+ 
+Building file: ../Generated_Code/AdcLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/AdcLdd1.d" -MT"Generated_Code/AdcLdd1.o" -c -o "Generated_Code/AdcLdd1.o" "../Generated_Code/AdcLdd1.c"
+Finished building: ../Generated_Code/AdcLdd1.c
+ 
+Building file: ../Generated_Code/BitsIoLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/BitsIoLdd1.d" -MT"Generated_Code/BitsIoLdd1.o" -c -o "Generated_Code/BitsIoLdd1.o" "../Generated_Code/BitsIoLdd1.c"
+Finished building: ../Generated_Code/BitsIoLdd1.c
+ 
+Building file: ../Generated_Code/BitsIoLdd2.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/BitsIoLdd2.d" -MT"Generated_Code/BitsIoLdd2.o" -c -o "Generated_Code/BitsIoLdd2.o" "../Generated_Code/BitsIoLdd2.c"
+Finished building: ../Generated_Code/BitsIoLdd2.c
+ 
+Building file: ../Generated_Code/Bits_Botones.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Bits_Botones.d" -MT"Generated_Code/Bits_Botones.o" -c -o "Generated_Code/Bits_Botones.o" "../Generated_Code/Bits_Botones.c"
+Finished building: ../Generated_Code/Bits_Botones.c
+ 
+Building file: ../Generated_Code/Bits_RGB.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Bits_RGB.d" -MT"Generated_Code/Bits_RGB.o" -c -o "Generated_Code/Bits_RGB.o" "../Generated_Code/Bits_RGB.c"
+Finished building: ../Generated_Code/Bits_RGB.c
+ 
+Building file: ../Generated_Code/Cpu.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Cpu.d" -MT"Generated_Code/Cpu.o" -c -o "Generated_Code/Cpu.o" "../Generated_Code/Cpu.c"
+Finished building: ../Generated_Code/Cpu.c
+ 
+Building file: ../Generated_Code/Inhr1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Inhr1.d" -MT"Generated_Code/Inhr1.o" -c -o "Generated_Code/Inhr1.o" "../Generated_Code/Inhr1.c"
+Finished building: ../Generated_Code/Inhr1.c
+ 
+Building file: ../Generated_Code/MCUC1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/MCUC1.d" -MT"Generated_Code/MCUC1.o" -c -o "Generated_Code/MCUC1.o" "../Generated_Code/MCUC1.c"
+Finished building: ../Generated_Code/MCUC1.c
+ 
+Building file: ../Generated_Code/PE_LDD.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PE_LDD.d" -MT"Generated_Code/PE_LDD.o" -c -o "Generated_Code/PE_LDD.o" "../Generated_Code/PE_LDD.c"
+Finished building: ../Generated_Code/PE_LDD.c
+ 
+Building file: ../Generated_Code/PPG1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PPG1.d" -MT"Generated_Code/PPG1.o" -c -o "Generated_Code/PPG1.o" "../Generated_Code/PPG1.c"
+Finished building: ../Generated_Code/PPG1.c
+ 
+Building file: ../Generated_Code/Pins1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Pins1.d" -MT"Generated_Code/Pins1.o" -c -o "Generated_Code/Pins1.o" "../Generated_Code/Pins1.c"
+Finished building: ../Generated_Code/Pins1.c
+ 
+Building file: ../Generated_Code/PpgLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/PpgLdd1.d" -MT"Generated_Code/PpgLdd1.o" -c -o "Generated_Code/PpgLdd1.o" "../Generated_Code/PpgLdd1.c"
+Finished building: ../Generated_Code/PpgLdd1.c
+ 
+Building file: ../Generated_Code/TI1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TI1.d" -MT"Generated_Code/TI1.o" -c -o "Generated_Code/TI1.o" "../Generated_Code/TI1.c"
+Finished building: ../Generated_Code/TI1.c
+ 
+Building file: ../Generated_Code/TU1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TU1.d" -MT"Generated_Code/TU1.o" -c -o "Generated_Code/TU1.o" "../Generated_Code/TU1.c"
+Finished building: ../Generated_Code/TU1.c
+ 
+Building file: ../Generated_Code/Term1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/Term1.d" -MT"Generated_Code/Term1.o" -c -o "Generated_Code/Term1.o" "../Generated_Code/Term1.c"
+Finished building: ../Generated_Code/Term1.c
+ 
+Building file: ../Generated_Code/TimerIntLdd1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/TimerIntLdd1.d" -MT"Generated_Code/TimerIntLdd1.o" -c -o "Generated_Code/TimerIntLdd1.o" "../Generated_Code/TimerIntLdd1.c"
+Finished building: ../Generated_Code/TimerIntLdd1.c
+ 
+Building file: ../Generated_Code/UTIL1.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/UTIL1.d" -MT"Generated_Code/UTIL1.o" -c -o "Generated_Code/UTIL1.o" "../Generated_Code/UTIL1.c"
+Finished building: ../Generated_Code/UTIL1.c
+ 
+Building file: ../Generated_Code/WAIT.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Generated_Code/WAIT.d" -MT"Generated_Code/WAIT.o" -c -o "Generated_Code/WAIT.o" "../Generated_Code/WAIT.c"
+Finished building: ../Generated_Code/WAIT.c
+ 
+Building target: laberinto.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/bisite/Desktop/SUEM/laberinto/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/bisite/Desktop/SUEM/laberinto/Project_Settings/Linker_Files" -Wl,-Map,"laberinto.map" -specs=rdimon.specs -specs=nano.specs -u _printf_float -specs=nosys.specs -o "laberinto.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AD1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/AdcLdd1.o ./Generated_Code/BitsIoLdd1.o ./Generated_Code/BitsIoLdd2.o ./Generated_Code/Bits_Botones.o ./Generated_Code/Bits_RGB.o ./Generated_Code/Cpu.o ./Generated_Code/Inhr1.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPG1.o ./Generated_Code/Pins1.o ./Generated_Code/PpgLdd1.o ./Generated_Code/TI1.o ./Generated_Code/TU1.o ./Generated_Code/Term1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/UTIL1.o ./Generated_Code/WAIT.o   
+Finished building target: laberinto.elf
+ 
+16:18:05 **** Incremental Build of configuration Debug for project laberinto ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+Finished building: ../Sources/main.c
+ 
+Building target: laberinto.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/bisite/Desktop/SUEM/laberinto/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/bisite/Desktop/SUEM/laberinto/Project_Settings/Linker_Files" -Wl,-Map,"laberinto.map" -specs=rdimon.specs -specs=nano.specs -u _printf_float -specs=nosys.specs -o "laberinto.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AD1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/AdcLdd1.o ./Generated_Code/BitsIoLdd1.o ./Generated_Code/BitsIoLdd2.o ./Generated_Code/Bits_Botones.o ./Generated_Code/Bits_RGB.o ./Generated_Code/Cpu.o ./Generated_Code/Inhr1.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPG1.o ./Generated_Code/Pins1.o ./Generated_Code/PpgLdd1.o ./Generated_Code/TI1.o ./Generated_Code/TU1.o ./Generated_Code/Term1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/UTIL1.o ./Generated_Code/WAIT.o   
+Finished building target: laberinto.elf
+ 
+16:21:45 **** Incremental Build of configuration Debug for project laberinto ****
+make all 
+Building file: ../Sources/main.c
+Invoking: Cross ARM C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/pdd/inc" -I"C:\Freescale\KDS_v3\eclipse\ProcessorExpert/lib/Kinetis/iofiles" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Sources" -I"C:/Users/bisite/Desktop/SUEM/laberinto/Generated_Code" -std=c99 -MMD -MP -MF"Sources/main.d" -MT"Sources/main.o" -c -o "Sources/main.o" "../Sources/main.c"
+Finished building: ../Sources/main.c
+ 
+Building target: laberinto.elf
+Invoking: Cross ARM C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -T "C:/Users/bisite/Desktop/SUEM/laberinto/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/bisite/Desktop/SUEM/laberinto/Project_Settings/Linker_Files" -Wl,-Map,"laberinto.map" -specs=rdimon.specs -specs=nano.specs -u _printf_float -specs=nosys.specs -o "laberinto.elf"  ./Static_Code/System/CPU_Init.o ./Static_Code/System/Peripherals_Init.o ./Static_Code/System/Vectors.o  ./Sources/Events.o ./Sources/main.o  ./Project_Settings/Startup_Code/startup.o  ./Generated_Code/AD1.o ./Generated_Code/ASerialLdd1.o ./Generated_Code/AdcLdd1.o ./Generated_Code/BitsIoLdd1.o ./Generated_Code/BitsIoLdd2.o ./Generated_Code/Bits_Botones.o ./Generated_Code/Bits_RGB.o ./Generated_Code/Cpu.o ./Generated_Code/Inhr1.o ./Generated_Code/MCUC1.o ./Generated_Code/PE_LDD.o ./Generated_Code/PPG1.o ./Generated_Code/Pins1.o ./Generated_Code/PpgLdd1.o ./Generated_Code/TI1.o ./Generated_Code/TU1.o ./Generated_Code/Term1.o ./Generated_Code/TimerIntLdd1.o ./Generated_Code/UTIL1.o ./Generated_Code/WAIT.o   
+Finished building target: laberinto.elf
+ 
+16:21:52 **** Incremental Build of configuration Debug for project laberinto ****
+make all 
+make: Nothing to be done for 'all'.

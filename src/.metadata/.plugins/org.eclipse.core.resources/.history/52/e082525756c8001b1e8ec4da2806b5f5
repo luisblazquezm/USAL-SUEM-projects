@@ -1,0 +1,573 @@
+/* ###################################################################
+**     Filename    : main.c
+**     Project     : laberinto
+**     Processor   : MKE06Z128VLK4
+**     Version     : Driver 01.01
+**     Compiler    : GNU C Compiler
+**     Date/Time   : 2021-06-07, 10:36, # CodeGen: 0
+**     Abstract    :
+**         Main module.
+**         This module contains user's application code.
+**     Settings    :
+**     Contents    :
+**         No public methods
+**
+** ###################################################################*/
+/*!
+** @file main.c
+** @version 01.01
+** @brief
+**         Main module.
+**         This module contains user's application code.
+*/         
+/*!
+**  @addtogroup main_module main module documentation
+**  @{
+*/         
+/* MODULE main */
+
+
+/* Including needed modules to compile this module/procedure */
+#include "Cpu.h"
+#include "Events.h"
+#include "Pins1.h"
+#include "MCUC1.h"
+#include "WAIT.h"
+#include "AD1.h"
+#include "AdcLdd1.h"
+#include "PPG1.h"
+#include "PpgLdd1.h"
+#include "Term1.h"
+#include "Inhr1.h"
+#include "ASerialLdd1.h"
+#include "Bits_RGB.h"
+#include "BitsIoLdd1.h"
+#include "Bits_Botones.h"
+#include "BitsIoLdd2.h"
+#include "FRTOS1.h"
+#include "UTIL1.h"
+/* Including shared modules, which are used for whole project */
+#include "PE_Types.h"
+#include "PE_Error.h"
+#include "PE_Const.h"
+#include "IO_Map.h"
+#include "PDD_Includes.h"
+#include "Init_Config.h"
+
+/* User includes (#include below this line is not maintained by Processor Expert) */
+#include <stdio.h>
+#include <string.h>
+#include "freertos.h"
+
+// timer macros
+#define TIMER_DELAY 1000
+
+// joystick measurement values
+volatile bool g_Complete=FALSE;
+#define JOYSTICK_THRESHOLD_LOW 1.0
+#define JOYSTICK_THRESHOLD_HIGH 2.0
+
+// led color macros
+#define LED_ON 0
+#define LED_OFF 1
+
+// button macros
+#define START_BUTTON_VALUE_1 1
+#define START_BUTTON_VALUE_2 2
+#define DEFAULT_BUTTON_VALUE 3
+
+// game definition constnats
+#define NUM_ROWS 25
+#define NUM_COLS 25
+#define TIMER_VALUE 120
+#define GAME_CYCLE 100
+
+// goal and player positions
+#define GOAL_Y 0
+#define GOAL_X 12
+#define PLAYER_1_START_X_VALUE 4
+#define PLAYER_1_START_Y_VALUE 24
+#define PLAYER_2_START_X_VALUE 20
+#define PLAYER_2_START_Y_VALUE 24
+
+// maze values
+#define MAZE_WALL 0
+#define MAZE_PATH 1
+#define MAZE_BLUE 2
+#define MAZE_WHITE 3
+#define MAZE_PLAYER_1 4
+#define MAZE_PLAYER_2 5
+#define MAZE_WINNER 6
+
+// array assignation
+#define X_VALUE 1
+#define Y_VALUE 0
+
+// tones definition
+#define TONE_UNO 1
+#define TONE_MOVE 300
+#define TONE_FINISH 390
+#define TONE_CRASH_WALL 250
+#define TONE_CRASH_PLAYER 480
+word TONES_WALL_T[]={TONE_CRASH_WALL, 0};
+word TONES_WALL_L[]={1, 0};
+word TONES_PLAYER_T[]={TONE_CRASH_PLAYER, 0};
+word TONES_PLAYER_L[]={1, 0};
+word TONES_MOVE_T[]={TONE_MOVE, 0};
+word TONES_MOVE_L[]={1, 0};
+word TONES_WINNER_T[]={TONE_FINISH,TONE_FINISH,TONE_FINISH,TONE_FINISH, 0};
+word TONES_WINNER_L[]={1,2,1,2, 0};
+
+
+// color values
+#define COLOR_BACKGROUND clBlack
+#define COLOR_PATH clWhite
+#define COLOR_PLAYER clGreen
+#define COLOR_WINNER clYellow
+#define COLOR_WALL clRed
+
+
+/*lint -save  -e970 Disable MISRA rule (6.3) checking. */
+
+int timer;
+bool gameFinished, gameFinishedBecauseOfTimer;
+int p1[2], p2[2];
+int numMovesP1, numMovesP2;
+int numPointsP1, numPointsP2;
+int maze[NUM_ROWS][NUM_COLS];
+/*
+int INITIAL_MAZE_VALUES[NUM_ROWS][NUM_COLS] = {MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+	MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PLAYER_1, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PLAYER_2, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL};
+*/
+
+int INITIAL_MAZE_VALUES[NUM_ROWS][NUM_COLS]= {
+		MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL,
+		MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL,
+		MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL,
+		MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_WALL,
+		MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL,
+		MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PATH, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL,
+		MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PLAYER_1, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_WALL, MAZE_PATH, MAZE_PLAYER_2, MAZE_PATH, MAZE_WALL, MAZE_WALL, MAZE_WALL
+};
+
+
+
+/**
+ * Measure joystick values.
+ * */
+void measureJoysticks(float v[2], float v2[2]){
+	  word Measure[2], Measure2[2], Measure3[2];
+
+	  AD1_Measure(FALSE);
+	  while(!g_Complete) WAIT_Waitms(1);
+	  g_Complete=FALSE;
+	  AD1_GetValue16(Measure);
+
+	  v[0] = (Measure[0]>>4)*3.06/4096;
+	  v[1] = (Measure[1]>>4)*3.06/4096;
+
+	  /* JOYSTICK 2 */
+	  AD1_MeasureChan(FALSE, 2);
+	  while(!g_Complete) WAIT_Waitms(1);
+	  g_Complete=FALSE;
+	  AD1_GetChanValue16(2, Measure2);
+
+	  AD1_MeasureChan(FALSE, 3);
+	  while(!g_Complete) WAIT_Waitms(1);
+	  g_Complete=FALSE;
+	  AD1_GetChanValue16(3, Measure3);
+
+	  v2[0] = (Measure2[0]>>4)*3.06/4096;
+	  v2[1] = (Measure3[0]>>4)*3.06/4096;
+}
+
+/**
+ * Play buzzer.
+ * */
+void tone(word frecuencia){
+	PPG1_Enable();
+	PPG1_SetFreqHz(frecuencia);
+}
+void notone(){
+	PPG1_Disable();
+	PPG1_ClrValue();
+}
+void playtone(word *ptrT, word*ptrL, word vel){
+	//TODO: quitar return
+	return;
+	int i;
+	for(i=0; ptrT[i]; i++){
+		if(ptrT[i]!=TONE_UNO){
+			tone(ptrT[i]);
+		}else{
+			notone();
+		}
+		WAIT_Waitms(vel*ptrL[i]);
+	}
+	notone();
+}
+
+
+/**
+ * Wait for game until it starts when button is pushed.
+ * */
+void waitForGameToStart(){
+	byte value;
+	do{
+		value = Bits_Botones_GetVal();
+		WAIT_Waitms(500);
+	}while(value!=START_BUTTON_VALUE_1 && value!=START_BUTTON_VALUE_2);
+}
+
+/**
+ * Set initial values for maze
+ * */
+void initializeMaze(){
+	p1[X_VALUE] = PLAYER_1_START_X_VALUE;
+	p1[Y_VALUE] = PLAYER_1_START_Y_VALUE;
+	p2[X_VALUE] = PLAYER_2_START_X_VALUE;
+	p2[Y_VALUE] = PLAYER_2_START_Y_VALUE;
+	timer=TIMER_VALUE;
+	numMovesP1 = numMovesP2 = 0;
+	gameFinishedBecauseOfTimer = FALSE;
+	memcpy(maze,INITIAL_MAZE_VALUES,NUM_ROWS*NUM_ROWS*sizeof(int));
+}
+
+/**
+ * Maze plottig functions
+ * */
+
+void plotMaze(int i, int j){
+	Term1_MoveTo(((j+1))+2,((i+1))+2);
+	switch(maze[i][j]){
+		case MAZE_PLAYER_1:
+		case MAZE_PLAYER_2:
+				Term1_SetColor(COLOR_PLAYER, COLOR_PLAYER);
+			break;
+		case MAZE_WALL:
+				Term1_SetColor(COLOR_WALL, COLOR_WALL);
+			break;
+		case MAZE_PATH:
+				Term1_SetColor(COLOR_PATH, COLOR_PATH);
+			break;
+		case MAZE_WINNER:
+				Term1_SetColor(COLOR_WINNER, COLOR_WINNER);
+			break;
+	}
+	Term1_SendChar(' ');
+	Term1_SetColor(COLOR_BACKGROUND, COLOR_BACKGROUND);
+}
+
+void plotTimeAndPoints(){
+
+	char buffer[80];
+
+	// plot time
+	memset(buffer,0,sizeof(char)*80);
+	sprintf(buffer, "TIEMPO: %d", timer);
+	Term1_SetColor(clWhite, clBlack);
+	Term1_MoveTo(1,1);
+	Term1_SendStr(buffer);
+
+	// plot player 1
+	memset(buffer,0,sizeof(char)*80);
+	sprintf(buffer, "P1: %d", numPointsP1);
+	Term1_MoveTo(22,1);
+	Term1_SendStr(buffer);
+
+	// plot player 2
+	memset(buffer,0,sizeof(char)*80);
+	sprintf(buffer, "P2: %d", numPointsP2);
+	Term1_MoveTo(30,1);
+	Term1_SendStr(buffer);
+}
+
+void plotAllMaze(){
+	int i,j;
+	// reset
+	Term1_CRLF();
+	Term1_Cls();
+	//plot messages
+	plotTimeAndPoints();
+	// plot maze
+	for(i=0; i<NUM_ROWS; i++){
+		for(j=0;j<NUM_COLS; j++){
+			Term1_SetColor(clBlack, clBlack);
+			plotMaze(i,j);
+		}
+	}
+}
+
+
+/*
+ * Update positions
+ * Play sound if collision with other player
+ * Also updates maze visually
+ * Also updates the counter of player movements per play
+ * */
+void updatePlayerPosition(int p[2], float joystickValues[2], int playerId){
+	int nextP[2];
+
+	// set current
+	memcpy(nextP,p,2*sizeof(int));
+
+	// calculate next position
+	if(joystickValues[X_VALUE] >= JOYSTICK_THRESHOLD_HIGH){
+		// if is greater than max threshold means left
+		nextP[X_VALUE]--;
+	}else if(joystickValues[X_VALUE] <= JOYSTICK_THRESHOLD_LOW){
+		// if is lower than min threshold means right
+		nextP[X_VALUE]++;
+	}
+
+	if(joystickValues[Y_VALUE] >= JOYSTICK_THRESHOLD_HIGH){
+		// if is greater than max threshold means down
+		nextP[Y_VALUE]++;
+	}else if(joystickValues[Y_VALUE] <= JOYSTICK_THRESHOLD_LOW){
+		// if is lower than min threshold means up
+		nextP[Y_VALUE]--;
+	}
+
+	// check next position
+	if(nextP[X_VALUE]<0 || nextP[X_VALUE]>=NUM_COLS){
+		playtone(TONES_WALL_T, TONES_WALL_L, GAME_CYCLE);
+	}else if(nextP[Y_VALUE]<0 || nextP[Y_VALUE]>=NUM_ROWS){
+		playtone(TONES_WALL_T, TONES_WALL_L, GAME_CYCLE);
+	}else if(maze[nextP[Y_VALUE]][nextP[X_VALUE]] == MAZE_WALL){
+		playtone(TONES_WALL_T, TONES_WALL_L, GAME_CYCLE);
+	}else if( (maze[nextP[Y_VALUE]][nextP[X_VALUE]] == MAZE_PLAYER_1 && playerId == MAZE_PLAYER_2 )
+			|| (maze[nextP[Y_VALUE]][nextP[X_VALUE]] == MAZE_PLAYER_2 && playerId == MAZE_PLAYER_1 )){
+		playtone(TONES_PLAYER_T, TONES_PLAYER_L, GAME_CYCLE);
+	}else{
+		// sound correct movement
+		playtone(TONES_MOVE_T, TONES_MOVE_L, GAME_CYCLE);
+
+		// update number of movements
+		if(maze[p[Y_VALUE]][p[X_VALUE]] == MAZE_PLAYER_1){
+			numMovesP1++;
+		}else{
+			numMovesP2++;
+		}
+
+		// update maze
+		maze[p[Y_VALUE]][p[X_VALUE]] = MAZE_PATH;
+		maze[nextP[Y_VALUE]][nextP[X_VALUE]] = playerId;
+		// update maze visually
+		plotMaze(p[Y_VALUE],p[X_VALUE]);
+		plotMaze(nextP[Y_VALUE],nextP[X_VALUE]);
+		// update player
+		memcpy(p,nextP,2*sizeof(int));
+	}
+}
+
+/*
+ * If there is a player in the goal, then updates the maze with the winner color.
+ * Also updates the winner flag
+ * */
+void checkForWinner(int p[2]){
+	bool isWinner = ((p[X_VALUE] == GOAL_X) && (p[Y_VALUE] == GOAL_Y));
+
+	if(isWinner){
+		// update status
+		if(maze[p[Y_VALUE]][p[X_VALUE]] == MAZE_PLAYER_1){
+			numPointsP1++;
+		}else{
+			numPointsP2++;
+		}
+		// update plot
+		maze[p[Y_VALUE]][p[X_VALUE]] = MAZE_WINNER;
+		plotMaze(p[Y_VALUE], p[X_VALUE]);
+		gameFinished=TRUE;
+
+	}
+}
+
+/*
+ * Update the maze status and make sound if neccesary
+ * */
+void gameBehaiour(){
+	float p1Joystick[2], p2Joystick[2];
+
+	// read joysticks
+	measureJoysticks(p1Joystick, p2Joystick);
+
+	// update maze and player positions
+	updatePlayerPosition(p1, p1Joystick, MAZE_PLAYER_1);
+	updatePlayerPosition(p2, p2Joystick, MAZE_PLAYER_2);
+
+	// check for winner
+	checkForWinner(p1);
+	checkForWinner(p2);
+}
+
+/**
+ * Timer periodic check
+ * */
+static void PTC0_task(void * param){
+	while(1){
+		if(gameFinished){
+			continue;
+		}
+
+		// wait delay and decrease timer
+		FRTOS1_vTaskDelay(TIMER_DELAY/FRTOS1_portTICK_RATE_MS);
+		timer--;
+
+		// check for game finish
+		if(timer<=0){
+			  printf("Ganado por tiempo\n\r");
+			  // set game finished due to timer
+			  gameFinishedBecauseOfTimer = TRUE;
+		}
+	}
+}
+
+
+int main(void)
+/*lint -restore Enable MISRA rule (6.3) checking. */
+{
+  /* Write your local variable definition here */
+
+  /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
+
+	PE_low_level_init();
+  /*** End of Processor Expert internal initialization.                    ***/
+
+  /* Write your code here */
+
+  // schedule timer task
+  if(pdPASS == FRTOS1_xTaskCreate(PTC0_task,(signed portCHAR *) "PTC0", configMINIMAL_STACK_SIZE, (void*) NULL, tskIDLE_PRIORITY, NULL) ){
+	printf("Unable to star task\r\n");
+	return 0;
+  }
+  FRTOS1_vTaskStartScheduler();
+
+
+  // set default buzzer value
+  notone();
+
+  // set game finished to true
+  gameFinished = TRUE;
+
+  while(1){
+
+	  printf("Inicio\n\r");
+
+	  // initialize and plot maze
+	  initializeMaze();
+	  plotAllMaze();
+
+	  // update led color and wait for button push
+	  Bits_RGB_PutVal(LED_OFF);
+	  waitForGameToStart();
+
+	  // set game flat to started and change led color
+	  gameFinished = FALSE;
+	  Bits_RGB_PutVal(LED_ON);
+
+	  while(!gameFinished){
+
+		  printf("Jugando\n\r");
+		  // update game and plot
+		  gameBehaiour();
+		  plotTimeAndPoints();
+
+		  // if game has finished do winner routine
+		  if(gameFinishedBecauseOfTimer){
+			  // update game finished
+			  gameFinished = TRUE;
+
+			  // update player points and winner color
+			  if(numMovesP1 > numMovesP2){
+				    numPointsP1++;
+					maze[p1[Y_VALUE]][p1[X_VALUE]] = MAZE_WINNER;
+					plotMaze(p1[Y_VALUE], p1[X_VALUE]);
+			  }else{
+				    numPointsP2++;
+					maze[p2[Y_VALUE]][p2[X_VALUE]] = MAZE_WINNER;
+					plotMaze(p2[Y_VALUE], p2[X_VALUE]);
+			  }
+
+		  }
+
+		  if(gameFinished){
+			  printf("Ganado\n\r");
+
+			  // update led color
+			  Bits_RGB_PutVal(LED_OFF);
+
+			  // update time and points and play tone
+			  plotTimeAndPoints();
+			  playtone(TONES_WINNER_T, TONES_WINNER_L, 4000);
+
+			  // wait for 4 secs
+			  WAIT_Waitms(4000);
+		  }
+	  }
+  }
+
+
+  /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
+  /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
+  #ifdef PEX_RTOS_START
+    PEX_RTOS_START();                  /* Startup of the selected RTOS. Macro is defined by the RTOS component. */
+  #endif
+  /*** End of RTOS startup code.  ***/
+  /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
+  for(;;){}
+  /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
+} /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
+
+/* END main */
+/*!
+** @}
+*/
+/*
+** ###################################################################
+**
+**     This file was created by Processor Expert 10.5 [05.21]
+**     for the Freescale Kinetis series of microcontrollers.
+**
+** ###################################################################
+*/

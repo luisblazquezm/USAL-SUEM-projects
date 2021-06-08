@@ -1,0 +1,166 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_CompilerCpp_SearchUserPaths</name>
+      <values lines_count="6">
+        <Line>"${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/pdd/inc"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/iofiles"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/pdd/inc"</Line>
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="6">
+        <Line>"${ProcessorExpertPath}/Repositories/Kinetis_Repository/lib/Kinetis/pdd2/MKE06Z128LK4/system"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/pdd/inc"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/iofiles"</Line>
+        <Line>"${ProcessorExpertPath}/lib/Kinetis/pdd/inc"</Line>
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code/Pins1.c" FileDate="2021-06-07, 10:36:37" FileAge="1623054997795" FileType="45637" CompNumb="3" />
+      <File Name="Static_Code/System/Peripherals_Init.c" FileDate="2015-04-10, 16:41:00" FileAge="1428676860000" FileType="262144" />
+      <File Name="Documentation/laberinto.txt" FileDate="2021-06-08, 14:19:16" FileAge="1623154756712" FileType="3072" />
+      <File Name="Documentation/doxygen/BitsIoLdd2_component.txt" FileDate="2021-06-08, 13:13:26" FileAge="1623150806579" FileType="45637" CompNumb="31" />
+      <File Name="Generated_Code/projdefs.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755939" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2021-06-07, 10:36:37" FileAge="1623054997791" FileType="45637" />
+      <File Name="Generated_Code/heap_5.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755908" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/BitsIoLdd2.h" FileDate="2021-06-08, 13:13:26" FileAge="1623150806583" FileType="45637" CompNumb="31" />
+      <File Name="Generated_Code/AD1.h" FileDate="2021-06-07, 14:42:18" FileAge="1623069738814" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/.gdbinit-FreeRTOS-helpers" FileDate="2021-06-08, 14:19:15" FileAge="1623154755977" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/portTicks.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755929" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/Inhr1.h" FileDate="2021-06-07, 17:20:50" FileAge="1623079250103" FileType="45637" CompNumb="19" />
+      <File Name="Generated_Code/heap_4.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755908" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/Vectors_Config.h" FileDate="2021-06-08, 14:19:16" FileAge="1623154756177" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/BitsIoLdd2.c" FileDate="2021-06-08, 14:19:16" FileAge="1623154756145" FileType="45637" CompNumb="31" />
+      <File Name="Generated_Code/message_buffer.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755967" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/BitsIoLdd1.h" FileDate="2021-06-08, 13:13:26" FileAge="1623150806594" FileType="45637" CompNumb="29" />
+      <File Name="Generated_Code/AD1.c" FileDate="2021-06-07, 14:42:18" FileAge="1623069738810" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/WAITconfig.h" FileDate="2021-06-07, 12:50:23" FileAge="1623063023924" FileType="45637" CompNumb="7" />
+      <File Name="Generated_Code/portasm.s" FileDate="2021-06-08, 14:19:15" FileAge="1623154755929" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/PDD/KBI_PDD.h" FileDate="2015-04-10, 16:37:18" FileAge="1428676638000" FileType="262144" />
+      <File Name="Generated_Code/Inhr1.c" FileDate="2021-06-07, 17:20:50" FileAge="1623079250102" FileType="45637" CompNumb="19" />
+      <File Name="Generated_Code/heap_3.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755908" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/BitsIoLdd1.c" FileDate="2021-06-08, 14:19:16" FileAge="1623154756130" FileType="45637" CompNumb="29" />
+      <File Name="Static_Code/PDD/PORT_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/FreeRTOS_license.txt" FileDate="2021-06-08, 14:19:15" FileAge="1623154755922" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/MCUC1config.h" FileDate="2021-06-08, 14:19:16" FileAge="1623154756126" FileType="45637" CompNumb="5" />
+      <File Name="Generated_Code/heap_2.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755908" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2021-06-07, 10:36:37" FileAge="1623054997790" FileType="45637" />
+      <File Name="Generated_Code/ASerialLdd1.h" FileDate="2021-06-07, 17:20:50" FileAge="1623079250108" FileType="45637" CompNumb="20" />
+      <File Name="Static_Code/PDD/NVIC_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/heap_1.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755906" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/ASerialLdd1.c" FileDate="2021-06-08, 14:19:16" FileAge="1623154756130" FileType="45637" CompNumb="20" />
+      <File Name="Static_Code/PDD/IRQ_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Static_Code/PDD/UART_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Documentation/doxygen/pex.css" FileDate="2021-06-07, 10:36:37" FileAge="1623054997116" FileType="16384" CompNumb="2" />
+      <File Name="Generated_Code/WAIT.h" FileDate="2021-06-07, 12:50:23" FileAge="1623063023930" FileType="45637" CompNumb="7" />
+      <File Name="Documentation/doxygen/ASerialLdd1_component.txt" FileDate="2021-06-07, 17:20:50" FileAge="1623079250105" FileType="45637" CompNumb="20" />
+      <File Name="Generated_Code/list.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755922" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/WAIT.c" FileDate="2021-06-07, 12:50:23" FileAge="1623063023927" FileType="45637" CompNumb="7" />
+      <File Name="Generated_Code/PpgLdd1.h" FileDate="2021-06-07, 15:09:53" FileAge="1623071393559" FileType="45637" CompNumb="14" />
+      <File Name="Documentation/doxygen/AdcLdd1_component.txt" FileDate="2021-06-07, 14:48:53" FileAge="1623070133160" FileType="45637" CompNumb="11" />
+      <File Name="Static_Code/PDD/CMP_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Static_Code/PDD/MSCAN_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/list.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755922" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/PpgLdd1.c" FileDate="2021-06-08, 14:19:16" FileAge="1623154756130" FileType="45637" CompNumb="14" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.ld" FileDate="2021-06-07, 10:36:37" FileAge="1623054997782" FileType="8" CompNumb="2" />
+      <File Name="Static_Code/PDD/PWT_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/task.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755949" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/event_groups.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755959" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/System/PDD_Includes.h" FileDate="2015-04-10, 16:41:00" FileAge="1428676860000" FileType="262144" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2021-06-07, 10:36:37" FileAge="1623054997792" FileType="45637" />
+      <File Name="Static_Code/PDD/FTMRE_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/timers.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755957" FileType="45637" CompNumb="32" />
+      <File Name="Documentation/laberinto_Settings.xml" FileDate="2021-06-08, 14:19:16" FileAge="1623154756345" FileType="3072" />
+      <File Name="Generated_Code/semphr.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755949" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/event_groups.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755959" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/mpu_prototypes.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755977" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/timers.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755959" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/portmacro.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755937" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/PPG1.h" FileDate="2021-06-07, 15:09:53" FileAge="1623071393570" FileType="45637" CompNumb="13" />
+      <File Name="Documentation/doxygen/BitsIoLdd1_component.txt" FileDate="2021-06-08, 13:13:26" FileAge="1623150806589" FileType="45637" CompNumb="29" />
+      <File Name="Generated_Code/AdcLdd1.h" FileDate="2021-06-08, 14:19:16" FileAge="1623154756093" FileType="45637" CompNumb="11" />
+      <File Name="Generated_Code/PPG1.c" FileDate="2021-06-07, 15:09:53" FileAge="1623071393574" FileType="45637" CompNumb="13" />
+      <File Name="Generated_Code/AdcLdd1.c" FileDate="2021-06-08, 14:19:16" FileAge="1623154756130" FileType="45637" CompNumb="11" />
+      <File Name="Static_Code/PDD/SPI_PDD.h" FileDate="2015-04-10, 16:37:18" FileAge="1428676638000" FileType="262144" />
+      <File Name="Sources/Events.h" FileDate="2021-06-08, 14:19:16" FileAge="1623154756177" FileType="131328" />
+      <File Name="Documentation/doxygen/pex.doxyfile" FileDate="2021-06-07, 10:36:37" FileAge="1623054997764" FileType="45637" CompNumb="2" />
+      <File Name="Static_Code/PDD/SIM_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Static_Code/PDD/GPIO_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Static_Code/PDD/ADC_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Sources/Events.c" FileDate="2021-06-08, 14:19:16" FileAge="1623154756177" FileType="131328" />
+      <File Name="Static_Code/PDD/FTM_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/Bits_RGB.h" FileDate="2021-06-08, 13:13:26" FileAge="1623150806587" FileType="45637" CompNumb="28" />
+      <File Name="Documentation/doxygen/laberinto_project.txt" FileDate="2021-06-08, 13:13:26" FileAge="1623150806671" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/FreeRTOS.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755898" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/UTIL1.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755993" FileType="45637" CompNumb="34" />
+      <File Name="Generated_Code/stack_macros.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755949" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/Bits_RGB.c" FileDate="2021-06-08, 13:13:26" FileAge="1623150806585" FileType="45637" CompNumb="28" />
+      <File Name="Generated_Code/UTIL1config.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755993" FileType="45637" CompNumb="34" />
+      <File Name="Generated_Code/croutine.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755898" FileType="45637" CompNumb="32" />
+      <File Name="Project_Settings/Startup_Code/startup.c" FileDate="2021-06-07, 10:36:37" FileAge="1623054997639" FileType="16384" CompNumb="2" />
+      <File Name="Generated_Code/UTIL1.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755993" FileType="45637" CompNumb="34" />
+      <File Name="Static_Code/PDD/WDOG_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/FRTOS1.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755977" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/freertos_tasks_c_additions.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755967" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/croutine.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755898" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/PDD/SCB_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/heap_useNewlib.txt" FileDate="2021-06-08, 14:19:15" FileAge="1623154755919" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/FRTOS1.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755977" FileType="45637" CompNumb="32" />
+      <File Name="Sources/main.c" FileDate="2021-06-08, 14:29:35" FileAge="1623155375051" FileType="128" />
+      <File Name="Generated_Code/Term1.h" FileDate="2021-06-07, 17:24:36" FileAge="1623079476924" FileType="45637" CompNumb="18" />
+      <File Name="Static_Code/PDD/PDD_Types.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Static_Code/PDD/SysTick_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/deprecated_definitions.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755939" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/FreeRTOSConfig.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755898" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/Term1.c" FileDate="2021-06-07, 17:24:36" FileAge="1623079476928" FileType="45637" CompNumb="18" />
+      <File Name="Generated_Code/mpu_wrappers.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755967" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/PDD/PMC_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/stream_buffer.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755967" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/queue.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755947" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/PDD/RTC0_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/mpu_wrappers.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755977" FileType="45637" CompNumb="32" />
+      <File Name="Documentation/doxygen/PpgLdd1_component.txt" FileDate="2021-06-07, 15:09:53" FileAge="1623071393566" FileType="45637" CompNumb="14" />
+      <File Name="Generated_Code/stream_buffer.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755967" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/queue.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755939" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/System/CPU_Init.h" FileDate="2015-04-10, 16:41:00" FileAge="1428676860000" FileType="262144" />
+      <File Name="Generated_Code/tasks.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755949" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/System/CPU_Init.c" FileDate="2015-04-10, 16:41:00" FileAge="1428676860000" FileType="262144" />
+      <File Name="Generated_Code/heap_useNewlib.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755917" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/System/Vectors.c" FileDate="2015-04-10, 16:41:00" FileAge="1428676860000" FileType="262144" />
+      <File Name="Generated_Code/Bits_Botones.h" FileDate="2021-06-08, 13:13:26" FileAge="1623150806577" FileType="45637" CompNumb="30" />
+      <File Name="Static_Code/PDD/PIT_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/MCUC1.h" FileDate="2021-06-07, 12:50:23" FileAge="1623063023938" FileType="45637" CompNumb="5" />
+      <File Name="Static_Code/PDD/MCM_PDD.h" FileDate="2015-04-10, 16:37:18" FileAge="1428676638000" FileType="262144" />
+      <File Name="Generated_Code/Bits_Botones.c" FileDate="2021-06-08, 13:13:26" FileAge="1623150806575" FileType="45637" CompNumb="30" />
+      <File Name="Generated_Code/port.c" FileDate="2021-06-08, 14:19:15" FileAge="1623154755927" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/MCUC1.c" FileDate="2021-06-07, 12:50:23" FileAge="1623063023935" FileType="45637" CompNumb="5" />
+      <File Name="Generated_Code/PE_LDD.h" FileDate="2021-06-08, 14:19:16" FileAge="1623154756161" FileType="45637" CompNumb="2" />
+      <File Name="Static_Code/IO_Map/MKE06Z4.h" FileDate="2015-12-14, 19:40:22" FileAge="1450118422000" FileType="262144" />
+      <File Name="Documentation/doxygen/RoutingReport_component.txt" FileDate="2021-06-08, 13:13:26" FileAge="1623150806686" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/PE_LDD.c" FileDate="2021-06-08, 14:19:16" FileAge="1623154756161" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/CPU_Config.h" FileDate="2021-06-08, 14:29:59" FileAge="1623155399187" FileType="45637" CompNumb="2" />
+      <File Name="Static_Code/PDD/I2C_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/readme_gdbBacktraceDebug.txt" FileDate="2021-06-08, 14:19:15" FileAge="1623154755977" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755886" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755888" FileType="45637" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2021-06-08, 14:19:16" FileAge="1623154756145" FileType="45637" CompNumb="2" />
+      <File Name="Generated_Code/FRTOS1config.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755977" FileType="45637" CompNumb="32" />
+      <File Name="Generated_Code/portable.h" FileDate="2021-06-08, 14:19:15" FileAge="1623154755929" FileType="45637" CompNumb="32" />
+      <File Name="Static_Code/PDD/CRC_PDD.h" FileDate="2015-04-10, 16:37:20" FileAge="1428676640000" FileType="262144" />
+      <File Name="Generated_Code/Init_Config.h" FileDate="2021-06-07, 17:34:30" FileAge="1623080070242" FileType="45637" CompNumb="2" />
+      <File Name="ProjectInfo.xml" FileDate="2021-06-08, 14:19:16" FileAge="1623154756692" FileType="45637" />
+      <File Name="Generated_Code/Pins1.h" FileDate="2021-06-07, 10:36:37" FileAge="1623054997797" FileType="45637" CompNumb="3" />
+      <File Name="Static_Code/System/Peripherals_Init.h" FileDate="2015-04-10, 16:41:00" FileAge="1428676860000" FileType="262144" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>36</CodeGenReference>
+</CodeGenerationInfo>
