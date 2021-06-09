@@ -1,0 +1,268 @@
+/*!
+  \page KBI1 KBI1 (Init_KBI)
+**          This file implements the KBI (KBI1) module initialization
+**          according to the Peripheral Initialization settings, and
+**          defines interrupt service routines prototypes.
+**
+
+- \subpage KBI1_settings
+- \subpage KBI1_regs_overview  
+- \subpage KBI1_regs_details
+- \ref KBI1_module "Component documentation" 
+\page KBI1_regs_overview Registers Initialization Overview
+This page contains the initialization values for the registers of the peripheral(s) configured
+by the component. 
+<table>
+<tr><td colspan="4" class="ttitle1">KBI1 Initialization</td></tr>
+<tr><td class="ttitle2">Address</td><td class="ttitle2">Register</td><td class="ttitle2">Register Value</td><td class="ttitle2">Register Description</td></tr>
+<tr><td>0x4007A008</td><td>KBI1_SC</td>
+<td class="regNotResetVal">0x00000006</td>
+ <td>KBI1_SC register, peripheral KBI1.</td></tr>
+<tr><td>0x4007A004</td><td>KBI1_ES</td>
+<td class="regResetVal">0x00000000</td>
+ <td>KBI1_ES register, peripheral KBI1.</td></tr>
+<tr><td>0x4007A000</td><td>KBI1_PE</td>
+<td class="regNotResetVal">0x18000000</td>
+ <td>KBI1_PE register, peripheral KBI1.</td></tr>
+</table>
+Color Denotes Reset Value
+<br/>
+\page KBI1_regs_details Register Initialization Details
+This page contains detailed description of initialization values for the 
+registers of the peripheral(s) configured by the component. 
+
+<div class="reghdr1">KBI1_SC</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">-</td>
+<td colspan="1" rowspan="2">-</td><td colspan="1" rowspan="2">RSTKBSP</td><td colspan="1" rowspan="2">KBSPEN</td>
+<td colspan="1" rowspan="1">KBF</td><td colspan="1"></td><td colspan="1" rowspan="2">KBIE</td>
+<td colspan="1" rowspan="2">KBMOD</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+<td colspan="1"></td><td colspan="1">KBACK</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+        
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4007A008</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000006</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>5</td><td>RSTKBSP</td><td>0x00</td><td>Reset KBI_SP registe</td>
+<tr><td>4</td><td>KBSPEN</td><td>0x00</td><td>Real KBI_SP register enable</td>
+<tr><td>3</td><td>KBF</td><td>0x00</td><td>KBI Interrupt Flag</td>
+<tr><td>2</td><td>KBACK</td><td>0x01</td><td>KBI Acknowledge</td>
+<tr><td>1</td><td>KBIE</td><td>0x01</td><td>KBI Interrupt Enable</td>
+<tr><td>0</td><td>KBMOD</td><td>0x00</td><td>KBI Detection Mode</td>
+</tr></table>
+<div class="reghdr1">KBI1_ES</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="16" rowspan="2">KBEDG</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="32" rowspan="2">KBEDG</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+        
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4007A004</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>0 - 31</td><td>KBEDG</td><td>0x00</td><td>KBI Edge Selects</td>
+</tr></table>
+<div class="reghdr1">KBI1_PE</div>
+<div class="regdiag">
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td>
+<td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="16" rowspan="2">KBIPE</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+<table class="regtbl">
+<tr class="trd1r">
+<td class="trd1c">Bit</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td>
+<td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td>
+</tr>
+<tr>
+<td class="trd1c">R</td><td colspan="32" rowspan="2">KBIPE</td>
+</tr>
+<tr>
+<td class="trd1c">W</td>
+</tr>
+<tr class="trd1r">
+<td class="trd1c">Reset</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>
+</tr>
+</table>
+        
+</div>
+<table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x4007A000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x18000000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
+<tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
+<tr><td>0 - 31</td><td>KBIPE</td><td>0x00</td><td>KBI Pin Enables</td>
+</tr></table>
+*/
+/*!
+\page KBI1_settings Component Settings
+\code
+**          Component name                                 : KBI1
+**          Device                                         : KBI1
+**          Settings                                       : 
+**            Clock gate                                   : <Automatic>
+**            Detection mode                               : Edges only
+**            Pin sensitivity                              : 
+**              Input pin 0                                : Falling edge or low level
+**              Input pin 1                                : Falling edge or low level
+**              Input pin 2                                : Falling edge or low level
+**              Input pin 3                                : Falling edge or low level
+**              Input pin 4                                : Falling edge or low level
+**              Input pin 5                                : Falling edge or low level
+**              Input pin 6                                : Falling edge or low level
+**              Input pin 7                                : Falling edge or low level
+**              Input pin 8                                : Falling edge or low level
+**              Input pin 9                                : Falling edge or low level
+**              Input pin 10                               : Falling edge or low level
+**              Input pin 11                               : Falling edge or low level
+**              Input pin 12                               : Falling edge or low level
+**              Input pin 13                               : Falling edge or low level
+**              Input pin 14                               : Falling edge or low level
+**              Input pin 15                               : Falling edge or low level
+**              Input pin 16                               : Falling edge or low level
+**              Input pin 17                               : Falling edge or low level
+**              Input pin 18                               : Falling edge or low level
+**              Input pin 19                               : Falling edge or low level
+**              Input pin 20                               : Falling edge or low level
+**              Input pin 21                               : Falling edge or low level
+**              Input pin 22                               : Falling edge or low level
+**              Input pin 23                               : Falling edge or low level
+**              Input pin 24                               : Falling edge or low level
+**              Input pin 25                               : Falling edge or low level
+**              Input pin 26                               : Falling edge or low level
+**              Input pin 27                               : Falling edge or low level
+**              Input pin 28                               : Falling edge or low level
+**              Input pin 29                               : Falling edge or low level
+**              Input pin 30                               : Falling edge or low level
+**              Input pin 31                               : Falling edge or low level
+**            Read source pin register                     : Real time value
+**          Pins/Signals                                   : 
+**            Input pin 0                                  : Disabled
+**            Input pin 1                                  : Disabled
+**            Input pin 2                                  : Disabled
+**            Input pin 3                                  : Disabled
+**            Input pin 4                                  : Disabled
+**            Input pin 5                                  : Disabled
+**            Input pin 6                                  : Disabled
+**            Input pin 7                                  : Disabled
+**            Input pin 8                                  : Disabled
+**            Input pin 9                                  : Disabled
+**            Input pin 10                                 : Disabled
+**            Input pin 11                                 : Disabled
+**            Input pin 12                                 : Disabled
+**            Input pin 13                                 : Disabled
+**            Input pin 14                                 : Disabled
+**            Input pin 15                                 : Disabled
+**            Input pin 16                                 : Disabled
+**            Input pin 17                                 : Disabled
+**            Input pin 18                                 : Disabled
+**            Input pin 19                                 : Disabled
+**            Input pin 20                                 : Disabled
+**            Input pin 21                                 : Disabled
+**            Input pin 22                                 : Disabled
+**            Input pin 23                                 : Disabled
+**            Input pin 24                                 : Disabled
+**            Input pin 25                                 : Disabled
+**            Input pin 26                                 : Disabled
+**            Input pin 27                                 : Enabled
+**              Input pin 27                               : PTH3/KBI1_P27/I2C1_SDA
+**              Pull-up                                    : <Automatic>
+**            Input pin 28                                 : Enabled
+**              Input pin 28                               : PTH4/KBI1_P28/I2C1_SCL
+**              Pull-up                                    : <Automatic>
+**            Input pin 29                                 : Disabled
+**            Input pin 30                                 : Disabled
+**            Input pin 31                                 : Disabled
+**          Interrupts                                     : 
+**            Interrupt                                    : INT_KBI1
+**            Interrupt request                            : Enabled
+**            Interrupt priority                           : <Automatic>
+**            ISR name                                     : ISR_KBI1
+**            KBI interrupt                                : Enabled
+**          Initialization                                 : 
+**            Reset source pin register                    : Disabled
+**            Call Init method                             : yes
+**            Utilize after reset values                   : default
+<h1>
+\endcode
+*/
