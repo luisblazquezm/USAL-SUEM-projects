@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : MKE06P80M48SF0RM, Rev. 1, May 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:04, # CodeGen: 14
+**     Date/Time   : 2021-06-10, 19:02, # CodeGen: 20
 **     Abstract    :
 **
 **     Settings    :
@@ -95,19 +95,8 @@ void Common_Init(void)
      registers in this method (see active generator configuration 
      Optimizations\Utilize after reset values property or enabled processor 
      component Common settings\Utilize after reset values property) */
-  /* SIM_SCGC: KBI1=0,KBI0=0 */
-  SIM_SCGC &= (uint32_t)~(uint32_t)((SIM_SCGC_KBI1_MASK | SIM_SCGC_KBI0_MASK));
   /* SIM_PINSEL1: I2C1PS=0 */
   SIM_PINSEL1 &= (uint32_t)~(uint32_t)(SIM_PINSEL1_I2C1PS_MASK);
-  /* NVIC_ICER: CLRENA31=0,CLRENA30=0,CLRENA29=0,CLRENA28=0,CLRENA27=0,CLRENA26=0,CLRENA25=0,CLRENA24=1,CLRENA23=0,CLRENA22=0,CLRENA21=0,CLRENA20=0,CLRENA19=0,CLRENA18=0,CLRENA17=0,CLRENA16=0,CLRENA15=0,CLRENA14=0,CLRENA13=0,CLRENA12=0,CLRENA11=0,CLRENA10=0,CLRENA9=0,CLRENA8=0,CLRENA7=0,CLRENA6=0,CLRENA5=0,CLRENA4=0,CLRENA3=0,CLRENA2=0,CLRENA1=0,CLRENA0=0 */
-  NVIC_ICER = NVIC_ICER_CLRENA24_MASK;
-  /* NVIC_IPR6: PRI_25=0,PRI_24=0 */
-  NVIC_IPR6 &= (uint32_t)~(uint32_t)(
-                NVIC_IP_PRI_25(0x03) |
-                NVIC_IP_PRI_24(0x03)
-               );
-  /* NVIC_ISER: SETENA31=0,SETENA30=0,SETENA29=0,SETENA28=0,SETENA27=0,SETENA26=0,SETENA25=1,SETENA24=0,SETENA23=0,SETENA22=0,SETENA21=0,SETENA20=0,SETENA19=0,SETENA18=0,SETENA17=0,SETENA16=0,SETENA15=0,SETENA14=0,SETENA13=0,SETENA12=0,SETENA11=0,SETENA10=0,SETENA9=0,SETENA8=0,SETENA7=0,SETENA6=0,SETENA5=0,SETENA4=0,SETENA3=0,SETENA2=0,SETENA1=0,SETENA0=0 */
-  NVIC_ISER = NVIC_ISER_SETENA25_MASK;
 }
 
 #endif /* CPU_COMMON_INIT */
@@ -133,9 +122,6 @@ void Components_Init(void)
   SIM_SCGC |= SIM_SCGC_FTM2_MASK;
   MCUC1_Init(); /* ### McuLibConfig "MCUC1" init code ... */
   WAIT1_Init(); /* ### Wait "WAIT1" init code ... */
-  /* ### Asynchro serial "Inhr1" init code ... */
-  Inhr1_Init();
-  /* ###  "Term1" init code ... */
   /* SIM_PINSEL1: FTM2PS0=1 */
   SIM_PINSEL1 = (uint32_t)((SIM_PINSEL1 & (uint32_t)~(uint32_t)(
                  SIM_PINSEL1_FTM2PS0(0x02)

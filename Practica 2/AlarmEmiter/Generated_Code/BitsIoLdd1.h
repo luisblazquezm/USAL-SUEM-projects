@@ -7,7 +7,7 @@
 **     Version     : Component 01.029, Driver 01.05, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:31, # CodeGen: 2
+**     Date/Time   : 2021-06-10, 18:05, # CodeGen: 15
 **     Abstract    :
 **         The HAL BitsIO component provides a low level API for unified
 **         access to general purpose digital input/output 32 pins across
@@ -20,9 +20,9 @@
 **          Port                                           : GPIOB
 **          Pins                                           : 2
 **            Pin0                                         : 
-**              Pin                                        : PTG5/KBI1_P21/FTM2_CH3/SPI1_MOSI
+**              Pin                                        : PTH3/KBI1_P27/I2C1_SDA
 **            Pin1                                         : 
-**              Pin                                        : PTG6/KBI1_P22/FTM2_CH4/SPI1_MISO
+**              Pin                                        : PTH4/KBI1_P28/I2C1_SCL
 **          Direction                                      : Input
 **          Initialization                                 : 
 **            Init. direction                              : Input
@@ -90,9 +90,9 @@ extern "C" {
 /* Definition of implementation constants */
 #define BitsIoLdd1_MODULE_BASE_ADDRESS GPIOB_BASE_PTR /*!< Name of macro used as the base address */
 #define BitsIoLdd1_PORTCONTROL_BASE_ADDRESS PORT_BASE_PTR /*!< Name of macro used as the base address */
-#define BitsIoLdd1_PORT_MASK 0x00600000U /*!< Mask of the allocated pin from the port */
-#define BitsIoLdd1_PIN_ALLOC_0_MASK 0x00200000 /*!< Mask of the first allocated pin from the port */
-#define BitsIoLdd1_PIN_ALLOC_0_INDEX 21U /*!< The index of the first allocated pin from the port */
+#define BitsIoLdd1_PORT_MASK 0x18000000U /*!< Mask of the allocated pin from the port */
+#define BitsIoLdd1_PIN_ALLOC_0_MASK 0x08000000 /*!< Mask of the first allocated pin from the port */
+#define BitsIoLdd1_PIN_ALLOC_0_INDEX 27U /*!< The index of the first allocated pin from the port */
 
 
 

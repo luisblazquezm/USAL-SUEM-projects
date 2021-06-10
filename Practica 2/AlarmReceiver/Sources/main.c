@@ -33,9 +33,6 @@
 #include "Pins1.h"
 #include "MCUC1.h"
 #include "WAIT1.h"
-#include "Term1.h"
-#include "Inhr1.h"
-#include "ASerialLdd1.h"
 #include "PPG1.h"
 #include "PpgLdd1.h"
 #include "II2C.h"
@@ -61,12 +58,6 @@
 #define TONE_HIGH 400
 word TONES_T[]={TONE_HIGH,TONE_LOW,TONE_HIGH,TONE_LOW,TONE_HIGH,TONE_LOW,TONE_HIGH,TONE_LOW,0};
 word TONES_L[]={1,1,1,1,1,1,1,1,0};
-
-// color definition
-#define COLOR_BACKGROUND clBlack
-#define COLOR_ACTIVATED clRed
-#define COLOR_DESACTIVATED clGreen
-#define COLOR_LETTER clWhite
 
 // global variables
 bool isAlarmActivated = FALSE;
@@ -106,46 +97,33 @@ void printLcd(char * message){
 	LCD_printstr(message);
 }
 
-void printSerial(char * message){
-	if(isAlarmActivated){
-		Term1_SetColor(COLOR_LETTER, COLOR_ACTIVATED);
-	}else{
-		Term1_SetColor(COLOR_LETTER, COLOR_DESACTIVATED);
-	}
-	Term1_SendStr(message);
-	Term1_SetColor(COLOR_LETTER, COLOR_BACKGROUND);
-}
-
 
 void alarmBehaviour(){
 	// read from bus
 	LDD_TError error;
-	uint8_t Message[2];
+	uint8_t Message[5];
 	LDD_CAN_TFrame Frame;
 	Frame.Data=Message;
 
-	while(1){
-		error = CAN1_ReadFrame(gCANPtr, 0U, &Frame);
-		if(error == ERR_OK){
-			if(Frame.Data[1] == 'A' && !isAlarmActivated){
-				printf("Alarma activada\n\r");
-				isAlarmActivated = TRUE;
-				printLcd("ACTIVADO");
-				printSerial("Alarma activada\n");
-			}else if(Frame.Data[1] == 'D' && isAlarmActivated){
-				printf("Alarma desactivada\n\r");
-				isAlarmActivated = FALSE;
-				notone();
-				printLcd("DESACTIVADO");
-				printSerial("Alarma desactivada\n");
-			}else{
-				printf("No signal\n\r");
-			}
+	error = CAN1_ReadFrame(g_CANPtr, 0U, &Frame);
+	if(error == ERR_OK){
+		if(Frame.Data[3] == 'A' && !isAlarmActivated){
+			printf("Alarma activada\n\r");
+			isAlarmActivated = TRUE;
+			printLcd("ACTIVADO");
+	    }else if(Frame.Data[3] == 'D' && isAlarmActivated){
+			printf("Alarma desactivada\n\r");
+			isAlarmActivated = FALSE;
+			notone();
+			printLcd("DESACTIVADO");
+		}else{
+			printLcd("NO SIGNAL");
+			printf("No signal\n\r");
 		}
-		// make sound if the alarm is activated
-		if(isAlarmActivated){
-			playtone(TONES_T, TONES_L, 200);
-		}
+	}
+	// make sound if the alarm is activated
+	if(isAlarmActivated){
+		playtone(TONES_T, TONES_L, 200);
 	}
 }
 
@@ -175,9 +153,6 @@ int main(void)
   LCD_Init(0x27, 16, 2, LCD_5x8DOTS);
   printLcd("DESACTIVADO");
 
-  // print initial message
-  Term1_Cls();
-  printSerial("Historico:\n");
 
   // enter in classical alarm behaviour
   while(1){
@@ -185,6 +160,7 @@ int main(void)
 	  alarmBehaviour();
 	  // wait time step
 	  WAIT1_Waitms(ALARM_CYCLE);
+	  WAIT1_Waitms(3000);
   }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

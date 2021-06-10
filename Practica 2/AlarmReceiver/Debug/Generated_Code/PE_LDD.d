@@ -9,12 +9,11 @@ Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/System/CPU_Init.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/CPU_Config.h \
  ../Generated_Code/WAIT1.h ../Generated_Code/WAIT1config.h \
- ../Generated_Code/Term1.h ../Generated_Code/Inhr1.h \
- ../Generated_Code/ASerialLdd1.h ../Generated_Code/PPG1.h \
- ../Generated_Code/PpgLdd1.h \
+ ../Generated_Code/PPG1.h ../Generated_Code/PpgLdd1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/PDD/FTM_PDD.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/PDD/PDD_Types.h \
- ../Generated_Code/II2C.h ../Generated_Code/IntI2cLdd1.h
+ ../Generated_Code/II2C.h ../Generated_Code/IntI2cLdd1.h \
+ ../Generated_Code/CAN1.h
 
 ../Generated_Code/PE_LDD.h:
 
@@ -48,12 +47,6 @@ C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/CPU_Config.h:
 
 ../Generated_Code/WAIT1config.h:
 
-../Generated_Code/Term1.h:
-
-../Generated_Code/Inhr1.h:
-
-../Generated_Code/ASerialLdd1.h:
-
 ../Generated_Code/PPG1.h:
 
 ../Generated_Code/PpgLdd1.h:
@@ -65,3 +58,5 @@ C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/PDD/PDD_Types.h:
 ../Generated_Code/II2C.h:
 
 ../Generated_Code/IntI2cLdd1.h:
+
+../Generated_Code/CAN1.h:

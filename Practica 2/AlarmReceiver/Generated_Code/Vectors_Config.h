@@ -52,9 +52,6 @@
 #include "Pins1.h"
 #include "MCUC1.h"
 #include "WAIT1.h"
-#include "Term1.h"
-#include "Inhr1.h"
-#include "ASerialLdd1.h"
 #include "PPG1.h"
 #include "PpgLdd1.h"
 #include "II2C.h"
@@ -109,8 +106,8 @@ extern "C" {
 #define VECTOR_37         (tIsrFunc)&UnhandledInterrupt         /* 0x25 -    ivINT_ACMP1                   unused by PE */
 #define VECTOR_38         (tIsrFunc)&UnhandledInterrupt         /* 0x26 -    ivINT_PIT_CH0                 unused by PE */
 #define VECTOR_39         (tIsrFunc)&UnhandledInterrupt         /* 0x27 -    ivINT_PIT_CH1                 unused by PE */
-#define VECTOR_40         (tIsrFunc)&UnhandledInterrupt         /* 0x28 0    ivINT_KBI0                    unused by PE */
-#define VECTOR_41         (tIsrFunc)&ISR_KBI1                   /* 0x29 0    ivINT_KBI1                    used by PE */
+#define VECTOR_40         (tIsrFunc)&UnhandledInterrupt         /* 0x28 -    ivINT_KBI0                    unused by PE */
+#define VECTOR_41         (tIsrFunc)&UnhandledInterrupt         /* 0x29 -    ivINT_KBI1                    unused by PE */
 #define VECTOR_42         (tIsrFunc)&UnhandledInterrupt         /* 0x2A -    ivINT_Reserved42              unused by PE */
 #define VECTOR_43         (tIsrFunc)&UnhandledInterrupt         /* 0x2B -    ivINT_ICS                     unused by PE */
 #define VECTOR_44         (tIsrFunc)&UnhandledInterrupt         /* 0x2C -    ivINT_WDOG_EWM                unused by PE */

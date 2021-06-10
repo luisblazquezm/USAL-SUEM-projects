@@ -36,8 +36,16 @@
 #include "CAN1.h"
 #include "Bits_Botones.h"
 #include "BitsIoLdd1.h"
-#include "AD1.h"
-#include "AdcLdd1.h"
+#include "ECHO.h"
+#include "BitIoLdd2.h"
+#include "FC321.h"
+#include "RealTimeLdd1.h"
+#include "TU1.h"
+#include "Term1.h"
+#include "Inhr1.h"
+#include "ASerialLdd1.h"
+#include "TRIGGER.h"
+#include "BitIoLdd1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -46,14 +54,25 @@
 #include "PDD_Includes.h"
 #include "Init_Config.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include <stdio.h>
+#include <stdlib.h>
 
 // alarm cycle definition
-#define ALARM_CYCLE 100
+#define ALARM_CYCLE 1000
 
 // button values
 #define START_BUTTON_VALUE_1 1
 #define START_BUTTON_VALUE_2 2
 #define DEFAULT_BUTTON_VALUE 3
+
+// ultrasound threshold
+#define ULTRASOUND_THRESHOLD 0.2
+
+// color definition
+#define COLOR_BACKGROUND clBlack
+#define COLOR_ACTIVATED clRed
+#define COLOR_DESACTIVATED clGreen
+#define COLOR_LETTER clWhite
 
 // global variables
 bool isAlarmTriggered = FALSE;
@@ -63,19 +82,36 @@ LDD_TDeviceData *g_CANPtr = NULL;
 /**
  * Read ultrasound sensors
  * */
+
+word previousValue = 0;
 bool isUltraSoundActivated(){
-	  float v[2];
-	  word Measure[2], Measure2[2], Measure3[2];
+	  word tpo;
+	  bool result;
 
-	  AD1_Measure(FALSE);
-	  while(!g_Complete) WAIT_Waitms(1);
-	  g_Complete=FALSE;
-	  AD1_GetValue16(Measure);
+	  // enable trigger
+	  TRIGGER_SetVal();
+	  FC321_Reset();
+	  WAIT_Waitus(10);
+	  TRIGGER_ClrVal();
 
-	  v[0] = (Measure[0]>>4)*3.06/4096;
-	  v[1] = (Measure[1]>>4)*3.06/4096;
+	  // start echo read
+	  while(!ECHO_GetVal());
+	  while(ECHO_GetVal());
+	  FC321_GetTimeUS(&tpo);
 
-	  printf("%d %d | %.2f %.2f\r\n",(Measure[0]>>4),(Measure[0]>>4),v[0],v[0]);
+	  if(previousValue == 0){
+		  previousValue = tpo;
+	  }
+
+	  if(ULTRASOUND_THRESHOLD <= abs(tpo-previousValue)){
+		  result = TRUE;
+	  }else{
+		  result = FALSE;
+	  }
+
+	  previousValue = tpo;
+
+	  return result;
 }
 
 
@@ -84,6 +120,7 @@ bool isUltraSoundActivated(){
  * */
 bool isButtonPushed(){
 	byte value = Bits_Botones_GetVal();
+	printf("value %d\r\n",value);
 	return (value==START_BUTTON_VALUE_1 || value==START_BUTTON_VALUE_2);
 }
 
@@ -95,10 +132,21 @@ void writeCan(bool activated){
 	LDD_CAN_TFrame Frame;
 	Frame.MessageID = (0x123U);
 	Frame.FrameType = LDD_CAN_DATA_FRAME;
-	uint8_t Message [] = {activated ? 'A': 'D'};
+	uint8_t Message [] = { 'P', 'T', 'H', activated ? 'A': 'D'};
 	Frame.Length = sizeof(Message);
 	Frame.Data = Message;
 	CAN1_SendFrame(g_CANPtr, 1U, &Frame);
+}
+
+
+void printSerial(char * message){
+	if(isAlarmTriggered){
+		Term1_SetColor(COLOR_LETTER, COLOR_ACTIVATED);
+	}else{
+		Term1_SetColor(COLOR_LETTER, COLOR_DESACTIVATED);
+	}
+	Term1_SendStr(message);
+	Term1_SetColor(COLOR_LETTER, COLOR_BACKGROUND);
 }
 
 /* *
@@ -106,14 +154,20 @@ void writeCan(bool activated){
  * */
 void alarmBehaviour(){
 	 if(!isAlarmTriggered){
+		 printf("Alarma desactivada midiendo\r\n");
 		 // read ultrasound values and if it says that trigger write in can bus
 		 if(isUltraSoundActivated()){
+			 printSerial("ACTIVADA\n");
+			 printf("Activar alarma\r\n");
 			 writeCan(TRUE);
 			 isAlarmTriggered = TRUE;
 		 }
 	 }else{
+		 printf("Alarma activada midiendo\r\n");
 		 // read button and if is correct write in can bus
 		 if(isButtonPushed()){
+			 printf("Desactivar alarma\r\n");
+			 printSerial("DESACTIVADA\n");
 			 writeCan(FALSE);
 			 isAlarmTriggered = FALSE;
 		 }
@@ -139,10 +193,11 @@ int main(void)
   // set default value for alarm
   isAlarmTriggered = FALSE;
 
-  while(1){
-	  isUltraSoundActivated();
-	  WAIT_Waitms(1000);
-  }
+  // print initial message
+  Term1_MoveTo(1,1);
+  Term1_SetColor(COLOR_BACKGROUND,COLOR_BACKGROUND);
+  Term1_Cls();
+  printSerial("Historico:\n");
 
   while(1){
 	  alarmBehaviour();

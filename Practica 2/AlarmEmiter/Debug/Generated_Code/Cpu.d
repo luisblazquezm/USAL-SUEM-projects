@@ -29,10 +29,22 @@ Generated_Code/Cpu.o: ../Generated_Code/Cpu.c ../Generated_Code/Cpu.h \
  C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/GPIO_PDD.h \
  C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/PDD_Types.h \
  C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitsIoLdd1.h \
- C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/AD1.h \
- C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/AdcLdd1.h \
- C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/ADC_PDD.h \
- C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/AdcLdd1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/ECHO.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitIoLdd2.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitIoLdd2.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/FC321.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/RealTimeLdd1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/TU1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/FTM_PDD.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/RealTimeLdd1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/TU1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/Term1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/Inhr1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/ASerialLdd1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/ASerialLdd1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/TRIGGER.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitIoLdd1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitIoLdd1.h \
  ../Generated_Code/Init_Config.h
 
 ../Generated_Code/Cpu.h:
@@ -101,12 +113,36 @@ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/PDD_Types.h:
 
 C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitsIoLdd1.h:
 
-C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/AD1.h:
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/ECHO.h:
 
-C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/AdcLdd1.h:
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitIoLdd2.h:
 
-C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/ADC_PDD.h:
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitIoLdd2.h:
 
-C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/AdcLdd1.h:
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/FC321.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/RealTimeLdd1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/TU1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/FTM_PDD.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/RealTimeLdd1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/TU1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/Term1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/Inhr1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/ASerialLdd1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/ASerialLdd1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/TRIGGER.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitIoLdd1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Generated_Code/BitIoLdd1.h:
 
 ../Generated_Code/Init_Config.h:

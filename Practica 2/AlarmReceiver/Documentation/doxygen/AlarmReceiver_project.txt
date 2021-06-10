@@ -24,11 +24,8 @@
 <br/>
 
 \page page_components Components 
-- \subpage ASerialLdd1
 - \subpage PpgLdd1
 - \subpage IntI2cLdd1
-- \subpage KBI0
-- \subpage KBI1
 - \subpage CAN1
 
 */
@@ -60,11 +57,8 @@
 <br/>
 
 \page page_components Components 
-- \subpage ASerialLdd1
 - \subpage PpgLdd1
 - \subpage IntI2cLdd1
-- \subpage KBI0
-- \subpage KBI1
 - \subpage CAN1
 
 */

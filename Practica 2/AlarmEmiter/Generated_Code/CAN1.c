@@ -7,7 +7,7 @@
 **     Version     : Component 01.112, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:31, # CodeGen: 2
+**     Date/Time   : 2021-06-10, 17:43, # CodeGen: 13
 **     Abstract    :
 **         This component "CAN_LDD" implements a CAN serial channel.
 **     Settings    :
@@ -268,8 +268,8 @@ LDD_TDeviceData* CAN1_Init(LDD_TUserData *UserDataPtr)
   MSCAN_CANIDAR6 = MSCAN_CANIDAR_BANK_2_AC(0xFF); /* Set the acceptance code - register MSCAN_CANIDAR6 */
   /* MSCAN_CANIDAR7: AC=0xFF */
   MSCAN_CANIDAR7 = MSCAN_CANIDAR_BANK_2_AC(0xFF); /* Set the acceptance code - register MSCAN_CANIDAR7 */
-  /* MSCAN_CANBTR0: SJW=0,BRP=0x21 */
-  MSCAN_CANBTR0 = (MSCAN_CANBTR0_SJW(0x00) | MSCAN_CANBTR0_BRP(0x21)); /* Set the timing register 0 */
+  /* MSCAN_CANBTR0: SJW=0,BRP=0x1C */
+  MSCAN_CANBTR0 = (MSCAN_CANBTR0_SJW(0x00) | MSCAN_CANBTR0_BRP(0x1C)); /* Set the timing register 0 */
   /* MSCAN_CANBTR1: SAMP=0,TSEG2=1,TSEG1=3 */
   MSCAN_CANBTR1 = (MSCAN_CANBTR1_TSEG2(0x01) | MSCAN_CANBTR1_TSEG1(0x03)); /* Set the timing register 1 */
   DeviceDataPrv->TxBuffersPendingMask = 0x00U; /* Clear Tx request pending message buffer mask */

@@ -26,7 +26,11 @@
 \page page_components Components 
 - \subpage CAN1
 - \subpage BitsIoLdd1
-- \subpage AdcLdd1
+- \subpage BitIoLdd1
+- \subpage BitIoLdd2
+- \subpage TU1
+- \subpage RealTimeLdd1
+- \subpage ASerialLdd1
 
 */
 
@@ -59,7 +63,11 @@
 \page page_components Components 
 - \subpage CAN1
 - \subpage BitsIoLdd1
-- \subpage AdcLdd1
+- \subpage BitIoLdd1
+- \subpage BitIoLdd2
+- \subpage TU1
+- \subpage RealTimeLdd1
+- \subpage ASerialLdd1
 
 */
 

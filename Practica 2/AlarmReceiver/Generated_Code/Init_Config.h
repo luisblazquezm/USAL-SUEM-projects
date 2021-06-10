@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : MKE06P80M48SF0RM, Rev. 1, May 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:04, # CodeGen: 14
+**     Date/Time   : 2021-06-10, 18:13, # CodeGen: 16
 **     Abstract    :
 **         This file collects Processor Expert components configuration 
 **         and interface files.
@@ -179,20 +179,6 @@
 
 /* PinSettings component header file */
 #include "Pins1.h"
-  
-/* Initialization component configuration header file */
-#include "KBI0_Config.h"
-/* Initialization component static header file */
-#include "KBI0_Init.h"
-/* Initialization component generated header file */
-#include "KBI0.h"
-  
-/* Initialization component configuration header file */
-#include "KBI1_Config.h"
-/* Initialization component static header file */
-#include "KBI1_Init.h"
-/* Initialization component generated header file */
-#include "KBI1.h"
   
   
 #endif /* __Init_Config_H */

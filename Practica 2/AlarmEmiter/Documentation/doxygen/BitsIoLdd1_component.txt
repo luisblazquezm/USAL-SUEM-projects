@@ -22,7 +22,7 @@ by the component.
 <td class="regResetVal">0x00000000</td>
  <td>GPIOB_PDDR register, peripheral BitsIoLdd1.</td></tr>
 <tr><td>0x400FF058</td><td>GPIOB_PIDR</td>
-<td class="regNotResetVal">0xFF9FFFFF</td>
+<td class="regNotResetVal">0xE7FFFFFF</td>
  <td>GPIOB_PIDR register, peripheral BitsIoLdd1.</td></tr>
 </table>
 Color Denotes Reset Value
@@ -110,7 +110,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x400FF058</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0xFF9FFFFF</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0xE7FFFFFF</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0xFFFFFFFF</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>0 - 31</td><td>PID</td><td>0x80000000</td><td>Port Input Disable</td>
@@ -123,9 +123,9 @@ registers of the peripheral(s) configured by the component.
 **          Port                                           : GPIOB
 **          Pins                                           : 2
 **            Pin0                                         : 
-**              Pin                                        : PTG5/KBI1_P21/FTM2_CH3/SPI1_MOSI
+**              Pin                                        : PTH3/KBI1_P27/I2C1_SDA
 **            Pin1                                         : 
-**              Pin                                        : PTG6/KBI1_P22/FTM2_CH4/SPI1_MISO
+**              Pin                                        : PTH4/KBI1_P28/I2C1_SCL
 **          Direction                                      : Input
 **          Initialization                                 : 
 **            Init. direction                              : Input

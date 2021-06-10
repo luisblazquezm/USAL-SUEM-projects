@@ -7,7 +7,7 @@
 **     Version     : Component 01.029, Driver 01.05, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:31, # CodeGen: 2
+**     Date/Time   : 2021-06-10, 18:05, # CodeGen: 15
 **     Abstract    :
 **         The HAL BitsIO component provides a low level API for unified
 **         access to general purpose digital input/output 32 pins across
@@ -20,9 +20,9 @@
 **          Port                                           : GPIOB
 **          Pins                                           : 2
 **            Pin0                                         : 
-**              Pin                                        : PTG5/KBI1_P21/FTM2_CH3/SPI1_MOSI
+**              Pin                                        : PTH3/KBI1_P27/I2C1_SDA
 **            Pin1                                         : 
-**              Pin                                        : PTG6/KBI1_P22/FTM2_CH4/SPI1_MISO
+**              Pin                                        : PTH4/KBI1_P28/I2C1_SCL
 **          Direction                                      : Input
 **          Initialization                                 : 
 **            Init. direction                              : Input
@@ -69,7 +69,7 @@ typedef struct {
 typedef BitsIoLdd1_TDeviceData *BitsIoLdd1_TDeviceDataPtr ; /* Pointer to the device data structure. */
 
 static const uint32_t BitsIoLdd1_PIN_MASK_MAP[2U] = {
-   0x00200000U, 0x00400000U
+   0x08000000U, 0x10000000U
 };                                     /* Map of masks for each pin */
 
 /* {Default RTOS Adapter} Static object used for simulation of dynamic driver memory allocation */
@@ -104,10 +104,10 @@ LDD_TDeviceData* BitsIoLdd1_Init(LDD_TUserData *UserDataPtr)
   DeviceDataPrv = &DeviceDataPrv__DEFAULT_RTOS_ALLOC;
   DeviceDataPrv->UserDataPtr = UserDataPtr; /* Store the RTOS device structure */
   /* Configure pin directions */
-  /* GPIOB_PDDR: PDD&=~0x00600000 */
-  GPIOB_PDDR &= (uint32_t)~(uint32_t)(GPIO_PDDR_PDD(0x00600000));
-  /* GPIOB_PIDR: PID&=~0x00600000 */
-  GPIOB_PIDR &= (uint32_t)~(uint32_t)(GPIO_PIDR_PID(0x00600000));
+  /* GPIOB_PDDR: PDD&=~0x18000000 */
+  GPIOB_PDDR &= (uint32_t)~(uint32_t)(GPIO_PDDR_PDD(0x18000000));
+  /* GPIOB_PIDR: PID&=~0x18000000 */
+  GPIOB_PIDR &= (uint32_t)~(uint32_t)(GPIO_PIDR_PID(0x18000000));
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_BitsIoLdd1_ID,DeviceDataPrv);
   return ((LDD_TDeviceData *)DeviceDataPrv);

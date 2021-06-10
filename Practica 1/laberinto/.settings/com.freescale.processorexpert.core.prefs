@@ -1,0 +1,21 @@
+#
+# Please do not modify or delete this file
+#
+eclipse.preferences.version=1
+DERIVATIVE_NAME=MKE06Z128xxx4
+PE_FAMILY=Kinetis
+PE_CPE_FILE=MCU10
+PE_MODE=CLASSIC
+LANGUAGE=c
+LANGUAGE_POSSIBILITIES=${com.processorexpert.wizard.language.c} ${com.processorexpert.wizard.language.asm}
+COMPILER=GNU C Compiler
+VARIANTS=MKE06Z128VLK4
+CONFIGURATIONS=FLASH
+PROJECT_NAME=ProcessorExpert
+INIT_ALL_PERIPHS=NO
+INIT_PINSETTINGS=YES
+STANDALONE=LINKED
+SDK_PROJECT=NO
+SDK_PATH=C:\Users\bisite\Desktop\Kinetis SDK 1.3.0 Standalone for KL82Z - Windows\lib
+MQX_LITE=NO
+BOARD_NAME=${ProcessorBoard}

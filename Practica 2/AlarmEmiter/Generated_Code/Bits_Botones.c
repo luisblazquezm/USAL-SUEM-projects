@@ -7,7 +7,7 @@
 **     Version     : Component 02.108, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:31, # CodeGen: 2
+**     Date/Time   : 2021-06-10, 18:05, # CodeGen: 15
 **     Abstract    :
 **         This component "BitsIO" implements a multi-bit input/output.
 **         It uses selected pins of one 1-bit to 8-bit port.
@@ -18,9 +18,9 @@
 **          BitsIO_LDD                                     : BitsIO_LDD
 **          Pins                                           : 2
 **            Pin0                                         : 
-**              Pin                                        : PTG5/KBI1_P21/FTM2_CH3/SPI1_MOSI
+**              Pin                                        : PTH3/KBI1_P27/I2C1_SDA
 **            Pin1                                         : 
-**              Pin                                        : PTG6/KBI1_P22/FTM2_CH4/SPI1_MISO
+**              Pin                                        : PTH4/KBI1_P28/I2C1_SCL
 **          Direction                                      : Input
 **          Initialization                                 : 
 **            Init. direction                              : Input

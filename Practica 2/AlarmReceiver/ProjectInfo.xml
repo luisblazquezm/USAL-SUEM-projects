@@ -40,7 +40,6 @@
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\System\</Path>
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\PDD\</Path>
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\IO_Map\</Path>
-      <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\Peripherals\</Path>
       <Path>C:\Freescale\KDS_v3\eclipse\ProcessorExpert\lib\Kinetis\pdd\inc\</Path>
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Sources\</Path>
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\</Path>
@@ -49,49 +48,37 @@
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\</Path>
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Project_Settings\Startup_Code\</Path>
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Sources\</Path>
-      <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\Peripherals\</Path>
       <Path>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\System\</Path>
     </SourceCodePaths>
   </PATHS>
   <FILES>
     <GeneratedCs>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\ASerialLdd1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\CAN1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Cpu.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\II2C.c</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Inhr1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\IntI2cLdd1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\MCUC1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\PPG1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Pins1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\PpgLdd1.c</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Term1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\WAIT1.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Project_Settings\Startup_Code\startup.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Sources\Events.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Sources\lcd.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Sources\main.c</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\Peripherals\KBI0_Init.c</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\Peripherals\KBI1_Init.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\System\CPU_Init.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\System\Peripherals_Init.c</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\System\Vectors.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\ASerialLdd1.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\CAN1.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\CPU_Config.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Cpu.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\II2C.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\IO_Map.h</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Inhr1.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Init_Config.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\IntI2cLdd1.h</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\KBI0.h</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\KBI0_Config.h</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\KBI1.h</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\KBI1_Config.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\MCUC1.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\MCUC1config.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\PE_Const.h</PathName>
@@ -101,7 +88,6 @@
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\PPG1.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Pins1.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\PpgLdd1.h</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Term1.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\Vectors_Config.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\WAIT1.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Generated_Code\WAIT1config.h</PathName>
@@ -132,8 +118,6 @@
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\PDD\SysTick_PDD.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\PDD\UART_PDD.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\PDD\WDOG_PDD.h</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\Peripherals\KBI0_Init.h</PathName>
-      <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\Peripherals\KBI1_Init.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\System\CPU_Init.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\System\PDD_Includes.h</PathName>
       <PathName>C:\Users\bisite\Desktop\SUEM\AlarmReceiver\Static_Code\System\Peripherals_Init.h</PathName>

@@ -6,7 +6,7 @@
 **     Version     : Component 01.011, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:05, # CodeGen: 15
+**     Date/Time   : 2021-06-10, 19:02, # CodeGen: 20
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -554,7 +554,7 @@ typedef struct {
 
 /* Peripherals_Init() parameterization settings */
   
-#define CPU_PERIPHERALS_INIT                               0x01U     /* Call Peripherals_Init() method in PE_low_level_init() */ 
+#define CPU_PERIPHERALS_INIT                               0x00U     /* Peripherals_Init() method is not called in PE_low_level_init() */ 
 
 /* Components_Init() parameterization settings */
 

@@ -22,20 +22,6 @@ Module "WAIT1"     (component Wait)
                 busy/blocking wait.
    - WAIT1_Init -Driver initialization routine.
 
-Module "Term1"     (component Term)
-   - Term1_CRLF -Send CRLF to terminal.
-   - Term1_SendStr -Send string to terminal.
-   - Term1_SendNum -Send number to terminal.
-   - Term1_SendChar -Send char to terminal.
-   - Term1_Cls -Clear the terminal window.
-   - Term1_MoveTo -Move cursor to position x, y. Range of coordinates can be from 1 to the size, which depends on the used 
-                terminal. Position [1,1] represents the upper left corner.
-   - Term1_SetColor -Set foreground and background color. The following color constant are defined in the header file:   
-                clBlack - Black color   clRed - Red color   clGreen - Green color   clYellow - Yellow color   clBlue - Blue 
-                color   clMagenta - Magenta color   clCyan - Cyan color   clWhite - White color
-   - Term1_ReadChar -Read char from terminal.
-   - Term1_KeyPressed -Test if char was received from the terminal.
-
 Module "PPG1"      (component PPG)
    - PPG1_Enable -This method enables the component - it starts the signal generation. Events may be generated 
                 (<DisableEvent>/<EnableEvent>).
@@ -122,16 +108,6 @@ Module "II2C"      (component InternalI2C)
    - II2C_SelectSlave -This method selects a new slave for communication by its 7-bit slave address value. Any send or receive 
                 method directs to or from selected device, until a new slave device is selected by this method. This method is 
                 not available for the SLAVE mode.
-
-Module "KBI0"      (component Init_KBI_VAR0)
-   - KBI0_Init -This method initializes registers of the KBI module according to the Peripheral Initialization settings. Call 
-                this method in user code to initialize the module. By default, the method is called by PE automatically; see 
-                "Call Init method" property of the component for more details.
-
-Module "KBI1"      (component Init_KBI_VAR0)
-   - KBI1_Init -This method initializes registers of the KBI module according to the Peripheral Initialization settings. Call 
-                this method in user code to initialize the module. By default, the method is called by PE automatically; see 
-                "Call Init method" property of the component for more details.
 
 Module "CAN1"      (component CAN_LDD)
    - CAN1_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 

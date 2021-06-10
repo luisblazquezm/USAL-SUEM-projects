@@ -39,8 +39,16 @@
 #include "CAN1.h"
 #include "Bits_Botones.h"
 #include "BitsIoLdd1.h"
-#include "AD1.h"
-#include "AdcLdd1.h"
+#include "ECHO.h"
+#include "BitIoLdd2.h"
+#include "FC321.h"
+#include "RealTimeLdd1.h"
+#include "TU1.h"
+#include "Term1.h"
+#include "Inhr1.h"
+#include "ASerialLdd1.h"
+#include "TRIGGER.h"
+#include "BitIoLdd1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -110,6 +118,22 @@ void AD1_OnEnd(void);
 **     Event       :  AD1_OnEnd (module Events)
 **
 **     Component   :  AD1 [ADC]
+**     Description :
+**         This event is called after the measurement (which consists
+**         of <1 or more conversions>) is/are finished.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void ECHO_OnEnd(void);
+/*
+** ===================================================================
+**     Event       :  ECHO_OnEnd (module Events)
+**
+**     Component   :  ECHO [ADC]
 **     Description :
 **         This event is called after the measurement (which consists
 **         of <1 or more conversions>) is/are finished.

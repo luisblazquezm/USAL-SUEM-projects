@@ -22,10 +22,6 @@ Sources/main.o: ../Sources/main.c \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/WAIT1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/MCUC1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/WAIT1config.h \
- C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/Term1.h \
- C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/Inhr1.h \
- C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/ASerialLdd1.h \
- C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/ASerialLdd1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/PPG1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/PpgLdd1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/PDD/FTM_PDD.h \
@@ -34,6 +30,7 @@ Sources/main.o: ../Sources/main.c \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/II2C.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/IntI2cLdd1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/IntI2cLdd1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/CAN1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/System/PDD_Includes.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/PDD/ADC_PDD.h \
  C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/PDD/CMP_PDD.h \
@@ -106,14 +103,6 @@ C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/MCUC1.h:
 
 C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/WAIT1config.h:
 
-C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/Term1.h:
-
-C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/Inhr1.h:
-
-C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/ASerialLdd1.h:
-
-C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/ASerialLdd1.h:
-
 C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/PPG1.h:
 
 C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/PpgLdd1.h:
@@ -129,6 +118,8 @@ C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/II2C.h:
 C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/IntI2cLdd1.h:
 
 C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/IntI2cLdd1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Generated_Code/CAN1.h:
 
 C:/Users/bisite/Desktop/SUEM/AlarmReceiver/Static_Code/System/PDD_Includes.h:
 

@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : MKE06P80M48SF0RM, Rev. 1, May 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:52, # CodeGen: 3
+**     Date/Time   : 2021-06-10, 17:43, # CodeGen: 13
 **     Abstract    :
 **         This file collects Processor Expert components configuration 
 **         and interface files.
@@ -21,7 +21,14 @@
 **            Internal oscillator                          : 
 **              Slow internal reference clock [kHz]        : 37.5
 **              Initialize slow trim value                 : no
-**            System oscillator                            : Disabled
+**            System oscillator                            : Enabled
+**              Clock source                               : External crystal
+**                Clock input pin                          : 
+**                  Pin name                               : PTB7/KBI0_P15/I2C0_SCL/EXTAL
+**                Clock output pin                         : 
+**                  Pin name                               : PTB6/KBI0_P14/I2C0_SDA/XTAL
+**                Clock frequency [MHz]                    : 8
+**                Oscillator operating mode                : Low power
 **            Clock source settings                        : 1
 **              Clock source setting 0                     : 
 **                Internal reference clock                 : 
@@ -30,39 +37,40 @@
 **                  ICSIRCLK clock [MHz]                   : 0.0375
 **                External reference clock                 : 
 **                  OSCERCLK in stop                       : Disabled
-**                  OSCERCLK clock [MHz]                   : 0
+**                  OSCERCLK clock [MHz]                   : 8
 **                ICS settings                             : 
-**                  ICS mode                               : FEI
-**                  ICS external ref. clock [MHz]          : 0
+**                  ICS mode                               : FEE
+**                  ICS external ref. clock [MHz]          : 8
 **                  Clock monitor                          : Disabled
 **                  FLL settings                           : 
 **                    FLL module                           : Enabled
-**                    FLL output [MHz]                     : 48
-**                    ICSFFCLK clock [kHz]                 : 37.5
-**                    Reference clock source               : Slow internal clock
-**                    FLL reference clock [kHz]            : 37.5
+**                    FLL output [MHz]                     : 40
+**                    ICSFFCLK clock [kHz]                 : 31.25
+**                    Reference clock source               : External clock
+**                      Reference clock divider            : Auto select
+**                    FLL reference clock [kHz]            : 31.25
 **                    Multiplication factor                : Auto select
 **                    Loss of lock interrupt               : Disabled
 **                  ICS output                             : FLL clock
 **                  ICS output prescaler                   : Auto select
-**                  ICS output clock                       : 48
+**                  ICS output clock                       : 40
 **            Clock configurations                         : 1
 **              Clock configuration 0                      : 
 **                __IRC_32kHz                              : 0.0375
-**                __SYSTEM_OSC                             : 10
+**                __SYSTEM_OSC                             : 8
 **                Clock source setting                     : configuration 0
-**                  ICS mode                               : FEI
-**                  ICS output [MHz]                       : 48
+**                  ICS mode                               : FEE
+**                  ICS output [MHz]                       : 40
 **                  ICSIRCLK clock [MHz]                   : 0.0375
-**                  ICSFFCLK [kHz]                         : 37.5
-**                  OSCERCLK clock [MHz]                   : 0
+**                  ICSFFCLK [kHz]                         : 31.25
+**                  OSCERCLK clock [MHz]                   : 8
 **                System clocks                            : 
 **                  Core clock prescaler                   : Auto select
-**                  Core clock                             : 48
+**                  Core clock                             : 40
 **                  Bus clock prescaler                    : Auto select
-**                  Bus clock                              : 24
+**                  Bus clock                              : 20
 **                  Timer clock prescaler                  : Auto select
-**                  Timer clock                            : 24
+**                  Timer clock                            : 20
 **          Operation mode settings                        : 
 **            WAIT operation mode                          : 
 **              Return to wait after ISR                   : no

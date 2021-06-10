@@ -55,8 +55,16 @@
 #include "CAN1.h"
 #include "Bits_Botones.h"
 #include "BitsIoLdd1.h"
-#include "AD1.h"
-#include "AdcLdd1.h"
+#include "TRIGGER.h"
+#include "BitIoLdd1.h"
+#include "ECHO.h"
+#include "BitIoLdd2.h"
+#include "FC321.h"
+#include "RealTimeLdd1.h"
+#include "TU1.h"
+#include "Term1.h"
+#include "Inhr1.h"
+#include "ASerialLdd1.h"
 #include "Events.h"
 
 #ifdef __cplusplus
@@ -97,9 +105,9 @@ extern "C" {
 #define VECTOR_28         (tIsrFunc)&UnhandledInterrupt         /* 0x1C -    ivINT_UART0                   unused by PE */
 #define VECTOR_29         (tIsrFunc)&UnhandledInterrupt         /* 0x1D -    ivINT_UART1                   unused by PE */
 #define VECTOR_30         (tIsrFunc)&UnhandledInterrupt         /* 0x1E -    ivINT_UART2                   unused by PE */
-#define VECTOR_31         (tIsrFunc)&AdcLdd1_MeasurementCompleteInterrupt /* 0x1F 64 ivINT_ADC0            used by PE */
+#define VECTOR_31         (tIsrFunc)&UnhandledInterrupt         /* 0x1F -    ivINT_ADC0                    unused by PE */
 #define VECTOR_32         (tIsrFunc)&UnhandledInterrupt         /* 0x20 -    ivINT_ACMP0                   unused by PE */
-#define VECTOR_33         (tIsrFunc)&UnhandledInterrupt         /* 0x21 -    ivINT_FTM0                    unused by PE */
+#define VECTOR_33         (tIsrFunc)&TU1_Interrupt              /* 0x21 64   ivINT_FTM0                    used by PE */
 #define VECTOR_34         (tIsrFunc)&UnhandledInterrupt         /* 0x22 -    ivINT_FTM1                    unused by PE */
 #define VECTOR_35         (tIsrFunc)&UnhandledInterrupt         /* 0x23 -    ivINT_FTM2                    unused by PE */
 #define VECTOR_36         (tIsrFunc)&UnhandledInterrupt         /* 0x24 -    ivINT_RTC                     unused by PE */

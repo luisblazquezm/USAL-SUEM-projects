@@ -13,8 +13,13 @@ Generated_Code/PE_LDD.o: ../Generated_Code/PE_LDD.c \
  ../Generated_Code/Bits_Botones.h ../Generated_Code/BitsIoLdd1.h \
  C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/GPIO_PDD.h \
  C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/PDD_Types.h \
- ../Generated_Code/AD1.h ../Generated_Code/AdcLdd1.h \
- C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/ADC_PDD.h
+ ../Generated_Code/TRIGGER.h ../Generated_Code/BitIoLdd1.h \
+ ../Generated_Code/ECHO.h ../Generated_Code/BitIoLdd2.h \
+ ../Generated_Code/FC321.h ../Generated_Code/RealTimeLdd1.h \
+ ../Generated_Code/TU1.h \
+ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/FTM_PDD.h \
+ ../Generated_Code/Term1.h ../Generated_Code/Inhr1.h \
+ ../Generated_Code/ASerialLdd1.h
 
 ../Generated_Code/PE_LDD.h:
 
@@ -58,8 +63,24 @@ C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/GPIO_PDD.h:
 
 C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/PDD_Types.h:
 
-../Generated_Code/AD1.h:
+../Generated_Code/TRIGGER.h:
 
-../Generated_Code/AdcLdd1.h:
+../Generated_Code/BitIoLdd1.h:
 
-C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/ADC_PDD.h:
+../Generated_Code/ECHO.h:
+
+../Generated_Code/BitIoLdd2.h:
+
+../Generated_Code/FC321.h:
+
+../Generated_Code/RealTimeLdd1.h:
+
+../Generated_Code/TU1.h:
+
+C:/Users/bisite/Desktop/SUEM/AlarmEmiter/Static_Code/PDD/FTM_PDD.h:
+
+../Generated_Code/Term1.h:
+
+../Generated_Code/Inhr1.h:
+
+../Generated_Code/ASerialLdd1.h:

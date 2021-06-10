@@ -125,6 +125,28 @@ void AD1_OnEnd(void)
 	g_Complete=TRUE;
 }
 
+/*
+** ===================================================================
+**     Event       :  ECHO_OnEnd (module Events)
+**
+**     Component   :  ECHO [ADC]
+**     Description :
+**         This event is called after the measurement (which consists
+**         of <1 or more conversions>) is/are finished.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+
+extern volatile bool g_Complete;
+void ECHO_OnEnd(void)
+{
+	g_Complete=TRUE;
+}
+
 /* END Events */
 
 #ifdef __cplusplus

@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : MKE06P80M48SF0RM, Rev. 1, May 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:52, # CodeGen: 3
+**     Date/Time   : 2021-06-10, 18:37, # CodeGen: 16
 **     Abstract    :
 **
 **     Settings    :
@@ -110,8 +110,15 @@ void Components_Init(void)
   WAIT_Init(); /* ### Wait "WAIT" init code ... */
   /* ### GPIO_LDD "BitsIoLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)BitsIoLdd1_Init(NULL);
-  /* ### ADC "AD1" init code ... */
-  AD1_Init();
+  /* ### BitIO_LDD "BitIoLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)BitIoLdd1_Init(NULL);
+  /* ### BitIO_LDD "BitIoLdd2" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)BitIoLdd2_Init(NULL);
+  /* ### RealTime_LDD "RealTimeLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)RealTimeLdd1_Init(NULL);
+  /* ### Asynchro serial "Inhr1" init code ... */
+  Inhr1_Init();
+  /* ###  "Term1" init code ... */
 }
 #endif /* CPU_COMPONENTS_INIT */
 

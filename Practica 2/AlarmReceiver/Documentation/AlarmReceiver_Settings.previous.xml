@@ -647,206 +647,145 @@
       <event name="OnAlertResponse" v="don&amp;apos;t generate code" />
     </Events>
   </Bean>
-  <Bean name="KBI0" type="Init_KBI">
+  <Bean name="CAN1" type="CAN_LDD">
     <Enabled v="Y" />
     <Properties>
-      <Component_name v="KBI0" />
-      <Device v="KBI0" />
+      <Component_name v="CAN1" />
+      <CAN_channel v="MSCAN" />
+      <boolgroup name="Interrupt service" v="Enabled">
+        <Interrupt_TxD v="INT_MSCAN_TX" />
+        <Interrupt_TxD_priority v="medium priority" />
+        <ISR_Name v="CAN1_TxInterrupt" />
+        <Interrupt_RxD v="INT_MSCAN_RX" />
+        <Interrupt_RxD_priority v="medium priority" />
+        <ISR_Name v="CAN1_RxInterrupt" />
+        <Interrupt_error v="INT_MSCAN_TX" />
+        <Interrupt_error_priority v="medium priority" />
+        <ISR_Name v="CAN1_TxInterrupt" />
+        <Interrupt_bus_off v="INT_MSCAN_TX" />
+        <Interrupt_bus_off_priority v="medium priority" />
+        <ISR_Name v="CAN1_TxInterrupt" />
+        <Interrupt_wake_up v="INT_MSCAN_TX" />
+        <Interrupt_wake_up_priority v="medium priority" />
+        <ISR_Name v="CAN1_TxInterrupt" />
+      </boolgroup>
       <group name="Settings">
-        <Clock_gate v="&amp;lt;Automatic&amp;gt;" />
-        <Detection_mode v="Edges only" />
-        <group name="Pin sensitivity">
-          <Input_pin_0 v="Falling edge or low level" />
-          <Input_pin_1 v="Falling edge or low level" />
-          <Input_pin_2 v="Falling edge or low level" />
-          <Input_pin_3 v="Falling edge or low level" />
-          <Input_pin_4 v="Falling edge or low level" />
-          <Input_pin_5 v="Falling edge or low level" />
-          <Input_pin_6 v="Falling edge or low level" />
-          <Input_pin_7 v="Falling edge or low level" />
-          <Input_pin_8 v="Falling edge or low level" />
-          <Input_pin_9 v="Falling edge or low level" />
-          <Input_pin_10 v="Falling edge or low level" />
-          <Input_pin_11 v="Falling edge or low level" />
-          <Input_pin_12 v="Falling edge or low level" />
-          <Input_pin_13 v="Falling edge or low level" />
-          <Input_pin_14 v="Falling edge or low level" />
-          <Input_pin_15 v="Falling edge or low level" />
-          <Input_pin_16 v="Falling edge or low level" />
-          <Input_pin_17 v="Falling edge or low level" />
-          <Input_pin_18 v="Falling edge or low level" />
-          <Input_pin_19 v="Falling edge or low level" />
-          <Input_pin_20 v="Falling edge or low level" />
-          <Input_pin_21 v="Falling edge or low level" />
-          <Input_pin_22 v="Falling edge or low level" />
-          <Input_pin_23 v="Falling edge or low level" />
-          <Input_pin_24 v="Falling edge or low level" />
-          <Input_pin_25 v="Falling edge or low level" />
-          <Input_pin_26 v="Falling edge or low level" />
-          <Input_pin_27 v="Falling edge or low level" />
-          <Input_pin_28 v="Falling edge or low level" />
-          <Input_pin_29 v="Falling edge or low level" />
-          <Input_pin_30 v="Falling edge or low level" />
-          <Input_pin_31 v="Falling edge or low level" />
+        <group name="Pins">
+          <group name="Rx pin">
+            <Rx_pin v="PTH2/KBI1_P26/BUSOUT/FTM1_CH0/CAN0_RX" />
+          </group>
+          <group name="Tx pin">
+            <Tx_pin v="&amp;lt;Automatic&amp;gt;" />
+          </group>
         </group>
-        <Read_source_pin_register v="Real time value" />
+        <boolgroup name="Global acceptance mask" v="no" />
+        <boolgroup name="Receiver FIFO" v="Enabled">
+          <ID_filter_acceptance_mode v="One 32-bit" />
+          <boolgroup name="Invidual acceptance mask table" v="Enabled">
+            <list name="Elements" v="2">
+              <group name="Element 0">
+                <ID_mask v="4294967295" />
+              </group>
+              <group name="Element 1">
+                <ID_mask v="4294967295" />
+              </group>
+            </list>
+          </boolgroup>
+          <group name="ID filter table">
+            <list name="Elements" v="2">
+              <group name="Element 0">
+                <ID_mask v="4294967295" />
+              </group>
+              <group name="Element 1">
+                <ID_mask v="4294967295" />
+              </group>
+            </list>
+          </group>
+        </boolgroup>
+        <list name="Message buffers" v="2">
+          <group name="Buffer0">
+            <boolgroup name="Buffer type" v="Receive">
+              <EmptySection_DummyValue />
+            </boolgroup>
+          </group>
+          <group name="Buffer1">
+            <boolgroup name="Buffer type" v="Transmit" />
+          </group>
+        </list>
+        <Timer_synchronization v="Disabled" />
+        <Loop_mode v="no" />
+        <Bus_off_recovery_mode v="Automatic" />
+        <Listen_only_mode v="no" />
+        <boolgroup name="Wake up" v="Disabled" />
       </group>
-      <group name="Pins/Signals">
-        <boolgroup name="Input pin 0" v="Disabled" />
-        <boolgroup name="Input pin 1" v="Disabled" />
-        <boolgroup name="Input pin 2" v="Disabled" />
-        <boolgroup name="Input pin 3" v="Disabled" />
-        <boolgroup name="Input pin 4" v="Disabled" />
-        <boolgroup name="Input pin 5" v="Disabled" />
-        <boolgroup name="Input pin 6" v="Disabled" />
-        <boolgroup name="Input pin 7" v="Disabled" />
-        <boolgroup name="Input pin 8" v="Disabled" />
-        <boolgroup name="Input pin 9" v="Disabled" />
-        <boolgroup name="Input pin 10" v="Disabled" />
-        <boolgroup name="Input pin 11" v="Disabled" />
-        <boolgroup name="Input pin 12" v="Disabled" />
-        <boolgroup name="Input pin 13" v="Disabled" />
-        <boolgroup name="Input pin 14" v="Disabled" />
-        <boolgroup name="Input pin 15" v="Disabled" />
-        <boolgroup name="Input pin 16" v="Disabled" />
-        <boolgroup name="Input pin 17" v="Disabled" />
-        <boolgroup name="Input pin 18" v="Disabled" />
-        <boolgroup name="Input pin 19" v="Disabled" />
-        <boolgroup name="Input pin 20" v="Disabled" />
-        <boolgroup name="Input pin 21" v="Disabled" />
-        <boolgroup name="Input pin 22" v="Disabled" />
-        <boolgroup name="Input pin 23" v="Disabled" />
-        <boolgroup name="Input pin 24" v="Disabled" />
-        <boolgroup name="Input pin 25" v="Disabled" />
-        <boolgroup name="Input pin 26" v="Disabled" />
-        <boolgroup name="Input pin 27" v="Disabled" />
-        <boolgroup name="Input pin 28" v="Disabled" />
-        <boolgroup name="Input pin 29" v="Disabled" />
-        <boolgroup name="Input pin 30" v="Disabled" />
-        <boolgroup name="Input pin 31" v="Disabled" />
-      </group>
-      <group name="Interrupts">
-        <Interrupt v="INT_KBI0" />
-        <Interrupt_request v="&amp;lt;Automatic&amp;gt;" />
-        <Interrupt_priority v="&amp;lt;Automatic&amp;gt;" />
-        <ISR_name v="" />
-        <KBI_interrupt v="Disabled" />
+      <group name="Timing">
+        <CAN_timing_calculator v="click to run -&amp;gt;" />
+        <Time_segment_1 v="4" />
+        <Time_segment_2 v="2" />
+        <Resync_jump_width v="1" />
+        <Time_quanta_per_bit v="7" />
+        <Samples_per_bit v="One sample" />
+        <Bit_rate v="100 kbit/s" />
       </group>
       <group name="Initialization">
-        <Reset_source_pin_register v="Disabled" />
-        <Call_Init_method v="yes" />
-        <Utilize_after_reset_values v="default" />
+        <Enabled_in_init__code v="yes" />
+        <group name="Event mask">
+          <OnFreeTxBuffer v="Enabled" />
+          <OnFullRxBuffer v="Enabled" />
+          <OnTransmitWarning v="Disabled" />
+          <OnReceiveWarning v="Disabled" />
+          <OnBusOff v="Disabled" />
+          <OnWakeUp v="Disabled" />
+          <OnError v="Disabled" />
+        </group>
       </group>
     </Properties>
     <Methods>
       <Init v="generate code" />
+      <Deinit v="don&amp;apos;t generate code" />
+      <Enable v="don&amp;apos;t generate code" />
+      <Disable v="don&amp;apos;t generate code" />
+      <SetEventMask v="don&amp;apos;t generate code" />
+      <GetEventMask v="don&amp;apos;t generate code" />
+      <SetAcceptanceMaskTable v="don&amp;apos;t generate code" />
+      <GetAcceptanceMaskTable v="don&amp;apos;t generate code" />
+      <SetRxIDFilterTable v="generate code" />
+      <GetRxIDFilterTable v="don&amp;apos;t generate code" />
+      <SetAcceptanceMaskMode v="don&amp;apos;t generate code" />
+      <SetRxBufferState v="don&amp;apos;t generate code" />
+      <GetRxBufferState v="don&amp;apos;t generate code" />
+      <SendFrame v="generate code" />
+      <ReadFrame v="generate code" />
+      <GetTxFrameState v="don&amp;apos;t generate code" />
+      <GetRxFrameState v="don&amp;apos;t generate code" />
+      <CancelTransmissionFrame v="don&amp;apos;t generate code" />
+      <GetTransmitErrorCounter v="don&amp;apos;t generate code" />
+      <GetReceiveErrorCounter v="don&amp;apos;t generate code" />
+      <GetRxIDFilterHitIndex v="don&amp;apos;t generate code" />
+      <GetError v="don&amp;apos;t generate code" />
+      <Main v="don&amp;apos;t generate code" />
+      <SetRunMode v="don&amp;apos;t generate code" />
+      <GetRunMode v="don&amp;apos;t generate code" />
+      <RequestBusOffRecovery v="don&amp;apos;t generate code" />
+      <GetStats v="don&amp;apos;t generate code" />
+      <ClearStats v="don&amp;apos;t generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <SetOperationMode v="don&amp;apos;t generate code" />
+      <GetDriverState v="don&amp;apos;t generate code" />
     </Methods>
     <Events>
-      <EmptySection_DummyValue />
-    </Events>
-  </Bean>
-  <Bean name="KBI1" type="Init_KBI">
-    <Enabled v="Y" />
-    <Properties>
-      <Component_name v="KBI1" />
-      <Device v="KBI1" />
-      <group name="Settings">
-        <Clock_gate v="&amp;lt;Automatic&amp;gt;" />
-        <Detection_mode v="Edges only" />
-        <group name="Pin sensitivity">
-          <Input_pin_0 v="Falling edge or low level" />
-          <Input_pin_1 v="Falling edge or low level" />
-          <Input_pin_2 v="Falling edge or low level" />
-          <Input_pin_3 v="Falling edge or low level" />
-          <Input_pin_4 v="Falling edge or low level" />
-          <Input_pin_5 v="Falling edge or low level" />
-          <Input_pin_6 v="Falling edge or low level" />
-          <Input_pin_7 v="Falling edge or low level" />
-          <Input_pin_8 v="Falling edge or low level" />
-          <Input_pin_9 v="Falling edge or low level" />
-          <Input_pin_10 v="Falling edge or low level" />
-          <Input_pin_11 v="Falling edge or low level" />
-          <Input_pin_12 v="Falling edge or low level" />
-          <Input_pin_13 v="Falling edge or low level" />
-          <Input_pin_14 v="Falling edge or low level" />
-          <Input_pin_15 v="Falling edge or low level" />
-          <Input_pin_16 v="Falling edge or low level" />
-          <Input_pin_17 v="Falling edge or low level" />
-          <Input_pin_18 v="Falling edge or low level" />
-          <Input_pin_19 v="Falling edge or low level" />
-          <Input_pin_20 v="Falling edge or low level" />
-          <Input_pin_21 v="Falling edge or low level" />
-          <Input_pin_22 v="Falling edge or low level" />
-          <Input_pin_23 v="Falling edge or low level" />
-          <Input_pin_24 v="Falling edge or low level" />
-          <Input_pin_25 v="Falling edge or low level" />
-          <Input_pin_26 v="Falling edge or low level" />
-          <Input_pin_27 v="Falling edge or low level" />
-          <Input_pin_28 v="Falling edge or low level" />
-          <Input_pin_29 v="Falling edge or low level" />
-          <Input_pin_30 v="Falling edge or low level" />
-          <Input_pin_31 v="Falling edge or low level" />
-        </group>
-        <Read_source_pin_register v="Real time value" />
-      </group>
-      <group name="Pins/Signals">
-        <boolgroup name="Input pin 0" v="Disabled" />
-        <boolgroup name="Input pin 1" v="Disabled" />
-        <boolgroup name="Input pin 2" v="Disabled" />
-        <boolgroup name="Input pin 3" v="Disabled" />
-        <boolgroup name="Input pin 4" v="Disabled" />
-        <boolgroup name="Input pin 5" v="Disabled" />
-        <boolgroup name="Input pin 6" v="Disabled" />
-        <boolgroup name="Input pin 7" v="Disabled" />
-        <boolgroup name="Input pin 8" v="Disabled" />
-        <boolgroup name="Input pin 9" v="Disabled" />
-        <boolgroup name="Input pin 10" v="Disabled" />
-        <boolgroup name="Input pin 11" v="Disabled" />
-        <boolgroup name="Input pin 12" v="Disabled" />
-        <boolgroup name="Input pin 13" v="Disabled" />
-        <boolgroup name="Input pin 14" v="Disabled" />
-        <boolgroup name="Input pin 15" v="Disabled" />
-        <boolgroup name="Input pin 16" v="Disabled" />
-        <boolgroup name="Input pin 17" v="Disabled" />
-        <boolgroup name="Input pin 18" v="Disabled" />
-        <boolgroup name="Input pin 19" v="Disabled" />
-        <boolgroup name="Input pin 20" v="Disabled" />
-        <boolgroup name="Input pin 21" v="Disabled" />
-        <boolgroup name="Input pin 22" v="Disabled" />
-        <boolgroup name="Input pin 23" v="Disabled" />
-        <boolgroup name="Input pin 24" v="Disabled" />
-        <boolgroup name="Input pin 25" v="Disabled" />
-        <boolgroup name="Input pin 26" v="Disabled" />
-        <boolgroup name="Input pin 27" v="Enabled">
-          <Input_pin_27 v="PTH3/KBI1_P27/I2C1_SDA" />
-          <Pull_up v="&amp;lt;Automatic&amp;gt;" />
-        </boolgroup>
-        <boolgroup name="Input pin 28" v="Enabled">
-          <Input_pin_28 v="PTH4/KBI1_P28/I2C1_SCL" />
-          <Pull_up v="&amp;lt;Automatic&amp;gt;" />
-        </boolgroup>
-        <boolgroup name="Input pin 29" v="Disabled" />
-        <boolgroup name="Input pin 30" v="Disabled" />
-        <boolgroup name="Input pin 31" v="Disabled" />
-      </group>
-      <group name="Interrupts">
-        <Interrupt v="INT_KBI1" />
-        <Interrupt_request v="Enabled" />
-        <Interrupt_priority v="&amp;lt;Automatic&amp;gt;" />
-        <ISR_name v="ISR_KBI1" />
-        <KBI_interrupt v="Enabled" />
-      </group>
-      <group name="Initialization">
-        <Reset_source_pin_register v="Disabled" />
-        <Call_Init_method v="yes" />
-        <Utilize_after_reset_values v="default" />
-      </group>
-    </Properties>
-    <Methods>
-      <Init v="generate code" />
-    </Methods>
-    <Events>
-      <EmptySection_DummyValue />
+      <Event_module_name v="Events" />
+      <event name="OnFreeTxBuffer" v="generate code">
+        <Event_procedure_name v="CAN1_OnFreeTxBuffer" />
+      </event>
+      <event name="OnFullRxBuffer" v="generate code">
+        <Event_procedure_name v="CAN1_OnFullRxBuffer" />
+      </event>
+      <event name="OnTransmitWarning" v="don&amp;apos;t generate code" />
+      <event name="OnReceiveWarning" v="don&amp;apos;t generate code" />
+      <event name="OnBusOff" v="don&amp;apos;t generate code" />
+      <event name="OnWakeUp" v="don&amp;apos;t generate code" />
+      <event name="OnError" v="don&amp;apos;t generate code" />
     </Events>
   </Bean>
 </PE_PROJECT_SETTINGS_DOCUMENTATION>

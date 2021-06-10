@@ -86,7 +86,7 @@ by the component.
 <td class="regNotResetVal">0x000000FF</td>
  <td>MSCAN_CANIDAR7 register, peripheral CAN1.</td></tr>
 <tr><td>0x40024002</td><td>MSCAN_CANBTR0</td>
-<td class="regNotResetVal">0x00000021</td>
+<td class="regNotResetVal">0x0000001C</td>
  <td>MSCAN_CANBTR0 register, peripheral CAN1.</td></tr>
 <tr><td>0x40024003</td><td>MSCAN_CANBTR1</td>
 <td class="regNotResetVal">0x00000013</td>
@@ -952,11 +952,11 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40024002</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x00000021</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x0000001C</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>6 - 7</td><td>SJW</td><td>0x00</td><td>Synchronization Jump Width</td>
-<tr><td>0 - 5</td><td>BRP</td><td>0x20</td><td>Baud Rate Prescaler</td>
+<tr><td>0 - 5</td><td>BRP</td><td>0x00</td><td>Baud Rate Prescaler</td>
 </tr></table>
 <div class="reghdr1">MSCAN_CANBTR1</div>
 <div class="regdiag">

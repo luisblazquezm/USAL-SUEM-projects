@@ -171,11 +171,11 @@
 			</tr>
 			<tr>
 				<td>33</td><td>PTH4/KBI1_P28/I2C1_SCL</td><td><small><i>same</i></small></td>
-				<td bgcolor='#F7DCFF'>KBI1</td><td bgcolor='#F7DCFF'>kbi28</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Input</td>
+				<td bgcolor='#F7DCFF'>GPIOB</td><td bgcolor='#F7DCFF'>port28</td><td bgcolor='#F7DCFF'>alt0</td><td bgcolor='#F7DCFF'>Not Specified</td>
 			</tr>
 			<tr>
 				<td>34</td><td>PTH3/KBI1_P27/I2C1_SDA</td><td><small><i>same</i></small></td>
-				<td bgcolor='#F7DCFF'>KBI1</td><td bgcolor='#F7DCFF'>kbi27</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Input</td>
+				<td bgcolor='#F7DCFF'>GPIOB</td><td bgcolor='#F7DCFF'>port27</td><td bgcolor='#F7DCFF'>alt0</td><td bgcolor='#F7DCFF'>Not Specified</td>
 			</tr>
 			<tr>
 				<td>35</td><td>PTF7/KBI1_P15/ADC0_SE15</td><td><small><i>same</i></small></td>
@@ -291,11 +291,11 @@
 			</tr>
 			<tr>
 				<td>63</td><td>PTC7/KBI0_P23/UART1_TX/CAN0_TX</td><td><small><i>same</i></small></td>
-				<td bgcolor='#5FE356'>UART1</td><td bgcolor='#5FE356'>uart_tx</td><td bgcolor='#5FE356'>alt2</td><td bgcolor='#5FE356'>Output</td>
+				<td bgcolor='#F7DCFF'>GPIOA</td><td bgcolor='#F7DCFF'>port23</td><td bgcolor='#F7DCFF'>alt0</td><td bgcolor='#F7DCFF'>Not Specified</td>
 			</tr>
 			<tr>
 				<td>64</td><td>PTC6/KBI0_P22/UART1_RX/CAN0_RX</td><td><small><i>same</i></small></td>
-				<td bgcolor='#5FE356'>UART1</td><td bgcolor='#5FE356'>uart_rx</td><td bgcolor='#5FE356'>alt2</td><td bgcolor='#5FE356'>Input</td>
+				<td bgcolor='#F7DCFF'>GPIOA</td><td bgcolor='#F7DCFF'>port22</td><td bgcolor='#F7DCFF'>alt0</td><td bgcolor='#F7DCFF'>Not Specified</td>
 			</tr>
 			<tr>
 				<td>65</td><td>PTI3/IRQ</td><td><small><i>same</i></small></td>
@@ -1353,11 +1353,11 @@
 			</tr>
 			<tr>
 				<td>33</td><td>PTH4/KBI1_P28/I2C1_SCL</td><td><small><i>same</i></small></td>
-				<td bgcolor='#F7DCFF'>KBI1</td><td bgcolor='#F7DCFF'>kbi28</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Input</td>
+				<td bgcolor='#F7DCFF'>GPIOB</td><td bgcolor='#F7DCFF'>port28</td><td bgcolor='#F7DCFF'>alt0</td><td bgcolor='#F7DCFF'>Not Specified</td>
 			</tr>
 			<tr>
 				<td>34</td><td>PTH3/KBI1_P27/I2C1_SDA</td><td><small><i>same</i></small></td>
-				<td bgcolor='#F7DCFF'>KBI1</td><td bgcolor='#F7DCFF'>kbi27</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Input</td>
+				<td bgcolor='#F7DCFF'>GPIOB</td><td bgcolor='#F7DCFF'>port27</td><td bgcolor='#F7DCFF'>alt0</td><td bgcolor='#F7DCFF'>Not Specified</td>
 			</tr>
 			<tr>
 				<td>35</td><td>PTF7/KBI1_P15/ADC0_SE15</td><td><small><i>same</i></small></td>
@@ -1473,11 +1473,11 @@
 			</tr>
 			<tr>
 				<td>63</td><td>PTC7/KBI0_P23/UART1_TX/CAN0_TX</td><td><small><i>same</i></small></td>
-				<td bgcolor='#5FE356'>UART1</td><td bgcolor='#5FE356'>uart_tx</td><td bgcolor='#5FE356'>alt2</td><td bgcolor='#5FE356'>Output</td>
+				<td bgcolor='#F7DCFF'>GPIOA</td><td bgcolor='#F7DCFF'>port23</td><td bgcolor='#F7DCFF'>alt0</td><td bgcolor='#F7DCFF'>Not Specified</td>
 			</tr>
 			<tr>
 				<td>64</td><td>PTC6/KBI0_P22/UART1_RX/CAN0_RX</td><td><small><i>same</i></small></td>
-				<td bgcolor='#5FE356'>UART1</td><td bgcolor='#5FE356'>uart_rx</td><td bgcolor='#5FE356'>alt2</td><td bgcolor='#5FE356'>Input</td>
+				<td bgcolor='#F7DCFF'>GPIOA</td><td bgcolor='#F7DCFF'>port22</td><td bgcolor='#F7DCFF'>alt0</td><td bgcolor='#F7DCFF'>Not Specified</td>
 			</tr>
 			<tr>
 				<td>65</td><td>PTI3/IRQ</td><td><small><i>same</i></small></td>

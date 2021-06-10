@@ -6,7 +6,7 @@
 **     Version     : Component 01.011, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2021-06-09, 19:05, # CodeGen: 15
+**     Date/Time   : 2021-06-10, 19:02, # CodeGen: 20
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -58,9 +58,6 @@
 #include "Pins1.h"
 #include "MCUC1.h"
 #include "WAIT1.h"
-#include "Term1.h"
-#include "Inhr1.h"
-#include "ASerialLdd1.h"
 #include "PPG1.h"
 #include "PpgLdd1.h"
 #include "II2C.h"
